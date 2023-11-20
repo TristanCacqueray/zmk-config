@@ -63,6 +63,7 @@ ZMK_BEHAVIOR(mo_tog, hold_tap,     \
 #define MICE    3
 #define CTRL    4
 #define UNICODE 5
+#define EMACS   6
 
 &sl {
     release-after-ms = <2000>;
@@ -72,11 +73,11 @@ ZMK_LAYER(base,
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
      &tog MICE     &kp Q         &kp W         &kp E         &kp R         &kp T             &kp Y         &kp U         &kp I         &kp O         &kp P         &sl UNICODE
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &kp TAB       &kp A         &hll FUN S    &hml LCTRL D  &hml LALT F   &kp G             &kp H         &hmr LALT J   &hmr LCTRL K  &hlr FUN L    &kp SEMI      &kp GRAVE
+     &kp TAB       &hll EMACS A  &hll FUN S    &hml LCTRL D  &hml LALT F   &kp G             &kp H         &hmr LALT J   &hmr LCTRL K  &hlr FUN L    &hlr EMACS SEMI &kp GRAVE
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      &kp ESC       &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH      &kp RET
 // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                               &kp LMETA     &kp LSHIFT    &kp BSPC          &kp SPACE     MO_TOG(NAV)   &none
+                                               &kp LMETA     &kp BSPC      &kp LSHIFT        &kp SPACE     MO_TOG(NAV)   &none
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
@@ -136,21 +137,70 @@ ZMK_LAYER(ctrl,
 #define I_CIRC &fr_i_circumflex
 #define E_CIRC &fr_e_circumflex
 #define A_CIRC &fr_a_circumflex
+#define O_CIRC &fr_o_circumflex
 
 #define I_TREMA &fr_i_diaeresis
 #define E_TREMA &fr_e_diaeresis
 #define U_TREMA &fr_u_diaeresis
 
 ZMK_UNICODE_SINGLE(dotdotdot, N2, N0, N2, N6) // …
-ZMK_UNICODE_SINGLE(euro_sign, N0, N0,  E, N9) // é
+ZMK_UNICODE_SINGLE(euro_sign, N0, N0,  E, N9) // €
 
 ZMK_LAYER(unicode,
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
      &none         &none         &fr_e_grave   &fr_e_acute   E_CIRC        &none             &none         &fr_u_grave   I_CIRC        &fr_oe        &none         &none
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &none         &fr_a_grave   A_CIRC        E_TREMA       &none         &euro_sign        &none         U_TREMA       I_TREMA       &el_lambda    &none         &none
+     &none         &fr_a_grave   A_CIRC        E_TREMA       &none         &euro_sign        &none         U_TREMA       I_TREMA       O_CIRC        &none         &none
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &none         &none         &none         &fr_c_cedilla &none         &none             &none         &none         &none         &dotdotdot    &none         &none
+     &none         &none         &none         &fr_c_cedilla &none         &none             &none         &none         &none         &dotdotdot    &el_lambda    &none
+// ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
+                                               &none         &none         &none             &none         &to DEFAULT   &none
+//                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
+)
+
+ZMK_BEHAVIOR(ecx_0, macro,
+    wait-ms = <0>;
+    tap-ms = <5>;
+    bindings = <&kp LC(X) &kp N0>;
+)
+ZMK_BEHAVIOR(ecx_1, macro,
+    wait-ms = <0>;
+    tap-ms = <5>;
+    bindings = <&kp LC(X) &kp N1>;
+)
+ZMK_BEHAVIOR(ecx_2, macro,
+    wait-ms = <0>;
+    tap-ms = <5>;
+    bindings = <&kp LC(X) &kp N2>;
+)
+ZMK_BEHAVIOR(ecx_3, macro,
+    wait-ms = <0>;
+    tap-ms = <5>;
+    bindings = <&kp LC(X) &kp N3>;
+)
+ZMK_BEHAVIOR(ecx_b, macro,
+    wait-ms = <0>;
+    tap-ms = <5>;
+    bindings = <&kp LC(X) &kp B>;
+)
+ZMK_BEHAVIOR(ecc_pp, macro,
+    wait-ms = <0>;
+    tap-ms = <5>;
+    bindings = <&kp LC(C) &kp P &kp P>;
+)
+ZMK_BEHAVIOR(ecc_pf, macro,
+    wait-ms = <0>;
+    tap-ms = <5>;
+    bindings = <&kp LC(C) &kp P &kp F>;
+)
+
+ZMK_LAYER(emacs,
+// ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+     &none         &none         &kp LG(RET)   &none         &none         &none             &none         &none         &none         &ecc_pf       &ecc_pp       &none
+// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+     &kp LG(TAB)   &kp LG(A)     &kp LG(S)     &kp LG(D)     &kp LG(F)     &kp LG(G)         &kp LG(H)     &kp LG(J)     &kp LG(K)     &kp LG(L)     &none         &none
+// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+     &none         &none         &none         &none         &none         &ecx_b            &ecx_0        &ecx_1        &ecx_2        &ecx_3        &none         &none
 // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
                                                &none         &none         &none             &none         &to DEFAULT   &none
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
