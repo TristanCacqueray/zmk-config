@@ -39,9 +39,9 @@
 #define MAKE_HRM(NAME, HOLD, TAP, TRIGGER_POS) \
     ZMK_BEHAVIOR(NAME, hold_tap, \
         flavor = "balanced"; \
-        tapping-term-ms = <280>; \
+        tapping-term-ms = <290>; \
         quick-tap-ms = <QUICK_TAP_MS>; \
-        require-prior-idle-ms = <120>; \
+        require-prior-idle-ms = <100>; \
         bindings = <HOLD>, <TAP>; \
         hold-trigger-key-positions = <TRIGGER_POS>; \
         hold-trigger-on-release; \
@@ -51,15 +51,6 @@ MAKE_HRM(hmr,  &kp, &kp, KEYS_L THUMBS)  // right-hand HRMs
 MAKE_HRM(hll, &mo, &kp, KEYS_R THUMBS)   // left-hand Home Layer
 MAKE_HRM(hlr, &mo, &kp, KEYS_L THUMBS)   // right-hand Home Layer
 
-// Macro to apply momentary-layer-on-hold/toggle-layer-on-tap to a specific layer
-#define MO_TOG(layer) &mo_tog layer layer
-
-ZMK_BEHAVIOR(mo_tog, hold_tap,     \
-        flavor = "hold-preferred"; \
-        tapping-term-ms = <200>;   \
-        bindings = <&mo>, <&tog>;  \
-    )
-
 // Layers
 #define DEFAULT 0
 #define FUN     1
@@ -68,6 +59,24 @@ ZMK_BEHAVIOR(mo_tog, hold_tap,     \
 #define CTRL    4
 #define UNICODE 5
 #define EMACS   6
+
+// hold: momentary layer, shift+tap: toggle layer
+ZMK_BEHAVIOR(fun_tog, mod_morph,
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+    bindings = <&mo FUN>, <&to FUN>;
+)
+ZMK_BEHAVIOR(nav_tog, mod_morph,
+    mods = <(MOD_LSFT|MOD_RSFT)>;
+    bindings = <&mo NAV>, <&to NAV>;
+)
+
+ZMK_BEHAVIOR(mt_repeat, hold_tap,         \
+    flavor = "hold-preferred";            \
+    tapping-term-ms = <400>;              \
+    quick-tap-ms = <200>;                 \
+    bindings = <&kp>, <&kp>;              \
+)
+#define SHIFT_BSPC &mt_repeat LSHIFT BSPC
 
 &sl {
     release-after-ms = <2000>;
@@ -81,7 +90,7 @@ ZMK_LAYER(base,
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      &kp ESC       &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH      &kp RET
 // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                               &kp LMETA     &kp BSPC      &kp LSHIFT        &kp SPACE     MO_TOG(NAV)   &none
+                                               &kp LMETA     &fun_tog      SHIFT_BSPC        &kp SPACE     &nav_tog      &kp PIPE
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
@@ -93,7 +102,7 @@ ZMK_LAYER(fun,
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      &trans        &kp LBKT      &kp RBKT      &kp LPAR      &kp RPAR      &kp AMPS          &kp EQUAL     &kp N1        &kp N2        &kp N3        &kp BSLH      &trans
 // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                               &trans        &trans        &trans            &trans        &kp N0        &kp DOT
+                                               &trans        &to DEFAULT   &trans            &trans        &kp N0        &kp DOT
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
@@ -110,7 +119,7 @@ ZMK_LAYER(nav,
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      &trans        &kp V_DN      &kp V_UP      &kp B_DN      &kp B_UP      &none             &kp PG_DN     &kp F1        &kp F2        &kp F3        &kp F12       &none
 // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                               &trans        &trans        &trans            &trans        &to DEFAULT   &trans
+                                               &trans        &to DEFAULT   &trans            &trans        &to DEFAULT   &trans
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
