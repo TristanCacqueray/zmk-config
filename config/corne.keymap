@@ -41,7 +41,7 @@
         flavor = "balanced"; \
         tapping-term-ms = <280>; \
         quick-tap-ms = <QUICK_TAP_MS>; \
-        require-prior-idle-ms = <150>; \
+        require-prior-idle-ms = <120>; \
         bindings = <HOLD>, <TAP>; \
         hold-trigger-key-positions = <TRIGGER_POS>; \
         hold-trigger-on-release; \
@@ -114,8 +114,8 @@ ZMK_LAYER(nav,
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
-#define U_MOUSE_MOVE_MAX 1250       // 600
-#define U_MOUSE_SCROLL_MAX 100      // 10
+#define U_MOUSE_MOVE_MAX 1250
+#define U_MOUSE_SCROLL_MAX 100
 
 #undef MOVE_UP
 #undef MOVE_DOWN
@@ -139,15 +139,15 @@ ZMK_LAYER(nav,
 #define U_WH_D &mwh SCROLL_DOWN
 
 &mmv {
-  acceleration-exponent = <1>;      // 1
-  time-to-max-speed-ms = <1500>;    // 40
-  delay-ms = <0>;                   // 0
+  acceleration-exponent = <1>;
+  time-to-max-speed-ms = <450>;
+  delay-ms = <0>;
 };
 
 &mwh {
-  acceleration-exponent = <1>;      // 0
-  time-to-max-speed-ms = <5000>;    // 40
-  delay-ms = <0>;                   // 10
+  acceleration-exponent = <1>;
+  time-to-max-speed-ms = <1000>;
+  delay-ms = <0>;
 };
 
 ZMK_LAYER(mice,
