@@ -85,10 +85,19 @@ ZMK_BEHAVIOR(mt_repeat, hold_tap,         \
 #define COMBO_TERM_FAST 18
 #define COMBO_TERM_SLOW 30
 
-ZMK_COMBO(minus,   &kp MINUS,       LT2 LM2,     DEFAULT, COMBO_TERM_FAST)
-ZMK_COMBO(under,   &kp UNDER,       LT1 LM1,     DEFAULT, COMBO_TERM_FAST)
-ZMK_COMBO(squote,  &kp SQT,         RT2 RM2,     DEFAULT, COMBO_TERM_FAST)
-ZMK_COMBO(dquote,  &kp DQT,         RT1 RM1,     DEFAULT, COMBO_TERM_FAST)
+ZMK_COMBO(minus,   &kp MINUS,       LT2 LM2,     DEFAULT FUN, COMBO_TERM_FAST)
+ZMK_COMBO(under,   &kp UNDER,       LT1 LM1,     DEFAULT FUN, COMBO_TERM_FAST)
+ZMK_COMBO(squote,  &kp SQT,         RT2 RM2,     DEFAULT FUN, COMBO_TERM_FAST)
+ZMK_COMBO(dquote,  &kp DQT,         RT1 RM1,     DEFAULT FUN, COMBO_TERM_FAST)
+ZMK_COMBO(equal,   &kp EQUAL,       RM0 RM1,     DEFAULT FUN, COMBO_TERM_FAST)
+ZMK_COMBO(pipe,    &kp PIPE,        RM3 RM4,     DEFAULT FUN, COMBO_TERM_FAST)
+
+ZMK_COMBO(lbkt,    &kp LBKT,        LM4 LM3,     DEFAULT FUN, COMBO_TERM_SLOW)
+ZMK_COMBO(lpar,    &kp LPAR,        LM3 LM2,     DEFAULT FUN, COMBO_TERM_SLOW)
+ZMK_COMBO(rpar,    &kp RPAR,        LM2 LM1,     DEFAULT FUN, COMBO_TERM_SLOW)
+ZMK_COMBO(rbkt,    &kp RBKT,        LM1 LM0,     DEFAULT FUN, COMBO_TERM_SLOW)
+ZMK_COMBO(lbrc,    &kp LBRC,        LT2 LT1,     DEFAULT FUN, COMBO_TERM_SLOW)
+ZMK_COMBO(rbrc,    &kp RBRC,        LT1 LT0,     DEFAULT FUN, COMBO_TERM_SLOW)
 
 ZMK_LAYER(base,
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
