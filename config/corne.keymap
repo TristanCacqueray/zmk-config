@@ -82,6 +82,14 @@ ZMK_BEHAVIOR(mt_repeat, hold_tap,         \
     release-after-ms = <2000>;
 };
 
+#define COMBO_TERM_FAST 18
+#define COMBO_TERM_SLOW 30
+
+ZMK_COMBO(minus,   &kp MINUS,       LT2 LM2,     DEFAULT, COMBO_TERM_FAST)
+ZMK_COMBO(under,   &kp UNDER,       LT1 LM1,     DEFAULT, COMBO_TERM_FAST)
+ZMK_COMBO(squote,  &kp SQT,         RT2 RM2,     DEFAULT, COMBO_TERM_FAST)
+ZMK_COMBO(dquote,  &kp DQT,         RT1 RM1,     DEFAULT, COMBO_TERM_FAST)
+
 ZMK_LAYER(base,
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
      &tog MICE     &kp Q         &kp W         &kp E         &kp R         &kp T             &kp Y         &kp U         &kp I         &kp O         &kp P         &sl UNICODE
@@ -90,7 +98,7 @@ ZMK_LAYER(base,
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      &kp ESC       &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH      &kp RET
 // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                               &kp LMETA     &fun_tog      SHIFT_BSPC        &kp SPACE     &nav_tog      &kp PIPE
+                                               &kp LMETA     &kp BSPC      SHIFT_BSPC        &kp SPACE     &nav_tog      &kp PIPE
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
