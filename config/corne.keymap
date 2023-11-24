@@ -87,6 +87,11 @@ ZMK_BEHAVIOR(mt_repeat, hold_tap,         \
 
 ZMK_COMBO(minus,   &kp MINUS,       LT2 LM2,     DEFAULT FUN, COMBO_TERM_FAST)
 ZMK_COMBO(under,   &kp UNDER,       LT1 LM1,     DEFAULT FUN, COMBO_TERM_FAST)
+ZMK_COMBO(amps,    &kp AMPS,        LM1 LB1,     DEFAULT FUN, COMBO_TERM_FAST)
+ZMK_COMBO(hash,    &kp HASH,        LM2 LB2,     DEFAULT FUN, COMBO_TERM_FAST)
+ZMK_COMBO(grave,   &kp GRAVE,       RM1 RB1,     DEFAULT FUN, COMBO_TERM_FAST)
+ZMK_COMBO(bslh,    &kp BSLH,        RM2 RB2,     DEFAULT FUN, COMBO_TERM_FAST)
+
 ZMK_COMBO(squote,  &kp SQT,         RT2 RM2,     DEFAULT FUN, COMBO_TERM_FAST)
 ZMK_COMBO(dquote,  &kp DQT,         RT1 RM1,     DEFAULT FUN, COMBO_TERM_FAST)
 ZMK_COMBO(equal,   &kp EQUAL,       RM0 RM1,     DEFAULT FUN, COMBO_TERM_FAST)
