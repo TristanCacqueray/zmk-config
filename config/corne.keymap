@@ -107,6 +107,11 @@ ZMK_COMBO(rbkt,    &kp RBKT,        LM1 LM0,     DEFAULT FUN, COMBO_TERM_SLOW)
 ZMK_COMBO(lbrc,    &kp LBRC,        LT2 LT1,     DEFAULT FUN, COMBO_TERM_SLOW)
 ZMK_COMBO(rbrc,    &kp RBRC,        LT1 LT0,     DEFAULT FUN, COMBO_TERM_SLOW)
 
+ZMK_COMBO(tild,    &kp TILDE,       RT1 RT2,     DEFAULT FUN, COMBO_TERM_SLOW)
+ZMK_COMBO(percent, &kp PRCNT,       RT2 RT3,     DEFAULT FUN, COMBO_TERM_SLOW)
+ZMK_COMBO(star,    &kp STAR,        RM1 RM2,     DEFAULT FUN, COMBO_TERM_SLOW)
+ZMK_COMBO(plus,    &kp PLUS,        RM2 RM3,     DEFAULT FUN, COMBO_TERM_SLOW)
+
 ZMK_LAYER(base,
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
      &tog MICE     &kp Q         &kp W         &kp E         &kp R         &kp T             &kp Y         &kp U         &kp I         &kp O         &kp P         &sl UNICODE
