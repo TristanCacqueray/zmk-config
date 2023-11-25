@@ -112,6 +112,9 @@ ZMK_COMBO(percent, &kp PRCNT,       RT2 RT3,     DEFAULT FUN, COMBO_TERM_SLOW)
 ZMK_COMBO(star,    &kp STAR,        RM1 RM2,     DEFAULT FUN, COMBO_TERM_SLOW)
 ZMK_COMBO(plus,    &kp PLUS,        RM2 RM3,     DEFAULT FUN, COMBO_TERM_SLOW)
 
+ZMK_COMBO(dllr,    &kp DLLR,        LM0 LB0,     DEFAULT FUN, COMBO_TERM_SLOW)
+ZMK_COMBO(caret,   &kp CARET,       RT3 RM3,     DEFAULT FUN, COMBO_TERM_SLOW)
+
 ZMK_LAYER(base,
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
      &tog MICE     &kp Q         &kp W         &kp E         &kp R         &kp T             &kp Y         &kp U         &kp I         &kp O         &kp P         &sl UNICODE
@@ -120,7 +123,7 @@ ZMK_LAYER(base,
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      &kp ESC       &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH      &kp RET
 // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                               &kp LMETA     &kp BSPC      SHIFT_BSPC        &kp SPACE     &nav_tog      &kp PIPE
+                                               &kp LMETA     &kp BSPC      SHIFT_BSPC        &kp SPACE     &nav_tog      &none
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
@@ -149,7 +152,7 @@ ZMK_LAYER(nav,
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      &trans        &kp V_DN      &kp V_UP      &kp B_DN      &kp B_UP      &none             &kp PG_DN     &kp F1        &kp F2        &kp F3        &kp F12       &none
 // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                               &trans        &to DEFAULT   &trans            &trans        &to DEFAULT   &trans
+                                               &trans        &to DEFAULT   &trans            &trans        &to DEFAULT   &kp PSCRN
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
 
