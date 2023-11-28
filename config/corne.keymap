@@ -58,7 +58,8 @@ MAKE_HRM(hlr, &mo, &kp, KEYS_L THUMBS, )   // right-hand Home Layer
 #define MICE    3
 #define CTRL    4
 #define UNICODE 5
-#define EMACS   6
+#define GREEK   6
+#define EMACS   7
 
 // hold: momentary layer, shift+tap: toggle layer
 ZMK_BEHAVIOR(fun_tog, mod_morph,
@@ -115,11 +116,18 @@ ZMK_COMBO(plus,    &kp PLUS,        RM2 RM3,     DEFAULT FUN, COMBO_TERM_SLOW)
 ZMK_COMBO(dllr,    &kp DLLR,        LM0 LB0,     DEFAULT FUN, COMBO_TERM_SLOW)
 ZMK_COMBO(caret,   &kp CARET,       RT3 RM3,     DEFAULT FUN, COMBO_TERM_SLOW)
 
+ZMK_BEHAVIOR(dot_eq, macro,
+    wait-ms = <0>;
+    tap-ms = <5>;
+    bindings = <&kp COLON &kp EQUAL>;
+)
+ZMK_COMBO(doteq,   &dot_eq,         RM4 RB4,     DEFAULT FUN, COMBO_TERM_SLOW)
+
 ZMK_LAYER(base,
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
      &tog MICE     &kp Q         &kp W         &kp E         &kp R         &kp T             &kp Y         &kp U         &kp I         &kp O         &kp P         &sl UNICODE
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &kp TAB       &hll EMACS A  &hll FUN S    &hml LCTRL D  &hml LALT F   &kp G             &kp H         &hmr LALT J   &hmr LCTRL K  &hlr FUN L    &hlr EMACS SEMI &kp GRAVE
+     &kp TAB       &hll EMACS A  &hll FUN S    &hml LCTRL D  &hml LALT F   &kp G             &kp H         &hmr LALT J   &hmr LCTRL K  &hlr FUN L    &hlr EMACS SEMI &sl GREEK
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      &kp ESC       &kp Z         &kp X         &kp C         &kp V         &kp B             &kp N         &kp M         &kp COMMA     &kp DOT       &kp FSLH      &kp RET
 // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
@@ -235,6 +243,21 @@ ZMK_LAYER(unicode,
      &none         &fr_a_grave   A_CIRC        E_TREMA       &none         &euro_sign        &none         U_TREMA       I_TREMA       O_CIRC        &none         &none
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      &none         &none         &none         &fr_c_cedilla &none         &none             &none         &none         &none         &dotdotdot    &el_lambda    &none
+// ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
+                                               &none         &none         &none             &none         &to DEFAULT   &none
+//                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
+)
+
+ZMK_UNICODE_PAIR(el_sumprod, N2, N2, N9, N5,    N0, N0,  D, N7)
+ZMK_UNICODE_PAIR(el_natreal, N0, N0, N4,  E,    N2, N1, N1,  D)
+
+ZMK_LAYER(greek,
+// ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
+     &none         &el_omega     &el_eta       &el_epsilon   &el_rho       &el_tau           &el_gamma     &el_upsilon   &el_iota      &el_omikron   &el_pi        &none
+// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+     &none         &el_alpha     &el_sigma     &el_delta     &el_phi       &el_theta         &el_chi       &none         &el_kappa     &el_lambda    &el_psi       &none
+// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
+     &none         &el_zeta      &el_xi        &none         &el_omega     &el_beta          &el_nu        &el_mu        &el_natreal   &none         &el_sumprod   &none
 // ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
                                                &none         &none         &none             &none         &to DEFAULT   &none
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
