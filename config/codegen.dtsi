@@ -1,0 +1,19 @@
+// Generated config with GenZMK
+// SPDX-License-Identifier: MIT
+ZMK_BEHAVIOR(em_open_project          , macro, bindings = <&kp LC(C) &kp P &kp P>; wait-ms = <0>; tap-ms = <5>;)
+ZMK_BEHAVIOR(em_open_proj_file        , macro, bindings = <&kp LC(C) &kp P &kp F>; wait-ms = <0>; tap-ms = <5>;)
+ZMK_BEHAVIOR(em_close_win             , macro, bindings = <&kp LC(X) &kp N0>; wait-ms = <0>; tap-ms = <5>;)
+ZMK_BEHAVIOR(em_close_other_win       , macro, bindings = <&kp LC(X) &kp N1>; wait-ms = <0>; tap-ms = <5>;)
+ZMK_BEHAVIOR(em_cut_horiz             , macro, bindings = <&kp LC(X) &kp N2>; wait-ms = <0>; tap-ms = <5>;)
+ZMK_BEHAVIOR(em_cut_vert              , macro, bindings = <&kp LC(X) &kp N3>; wait-ms = <0>; tap-ms = <5>;)
+ZMK_BEHAVIOR(em_s_buffer              , macro, bindings = <&kp LC(X) &kp B>; wait-ms = <0>; tap-ms = <5>;)
+
+
+ZMK_LAYER(wm,
+  &none &none &none &kp LS(UP) &none &none &none &kp LG(J) &kp LG(K) &kp LG(L) &em_open_project &none
+  &kp LG(TAB) &none &kp LS(LEFT) &kp LS(DOWN) &kp LS(RIGHT) &none &kp LG(RET) &kp LG(F) &kp LG(G) &kp LG(H) &em_open_proj_file &none
+  &none &em_close_win   &em_close_other_win  &em_cut_horiz &em_cut_vert &em_s_buffer &none &kp LG(A) &kp LG(S) &kp LG(D) &none &none
+  &none &none &none &kp LC(SPACE) &to DEFAULT &none
+)
+
+
