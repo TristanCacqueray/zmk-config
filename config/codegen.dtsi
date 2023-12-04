@@ -9,11 +9,35 @@ ZMK_BEHAVIOR(em_cut_vert              , macro, bindings = <&kp LC(X) &kp N3>; wa
 ZMK_BEHAVIOR(em_s_buffer              , macro, bindings = <&kp LC(X) &kp B>; wait-ms = <0>; tap-ms = <5>;)
 
 
-ZMK_LAYER(wm,
-  &none &none &none &kp LS(UP) &none &none &none &kp LG(J) &kp LG(K) &kp LG(L) &em_open_project &none
-  &kp LG(TAB) &none &kp LS(LEFT) &kp LS(DOWN) &kp LS(RIGHT) &none &kp LG(RET) &kp LG(F) &kp LG(G) &kp LG(H) &em_open_proj_file &none
-  &none &em_close_win   &em_close_other_win  &em_cut_horiz &em_cut_vert &em_s_buffer &none &kp LG(A) &kp LG(S) &kp LG(D) &none &none
-  &none &none &none &kp LC(SPACE) &to DEFAULT &none
-)
+
+/ {
+  keymap {
+    compatible = "zmk,keymap";
+    layer_wm {
+      bindings = <
+          &none &none &none &kp LS(UP) &none &none &none &kp LG(J) &kp LG(K) &kp LG(L) &em_open_project &none
+          &kp LG(TAB) &none &kp LS(LEFT) &kp LS(DOWN) &kp LS(RIGHT) &none &kp LG(RET) &kp LG(F) &kp LG(G) &kp LG(H) &em_open_proj_file &none
+          &none &em_close_win   &em_close_other_win  &em_cut_horiz &em_cut_vert &em_s_buffer &none &kp LG(A) &kp LG(S) &kp LG(D) &none &none
+          &none &none &none &kp LC(SPACE) &to DEFAULT &none
+      >;
+    };
+  };
+};
+
+
+
+/ {
+  keymap {
+    compatible = "zmk,keymap";
+    layer_mice {
+      bindings = <
+          &to DEFAULT &none &kp LA(LEFT) &kp UP &kp LA(RIGHT) &none &none &mkp LCLK &mmv MOVE_VERT(1250) &mkp RCLK &none &none
+          &to CTRL &none &kp LEFT &kp DOWN &kp RIGHT &kp PG_UP &mwh SCROLL_VERT(10) &mmv MOVE_HOR(-1250) &mmv MOVE_VERT(-1250) &mmv MOVE_HOR(1250) &none &none
+          &none &none &none &kp LCTRL &kp LALT &kp PG_DN &mwh SCROLL_VERT(-10) &mkp MCLK &none &none &none &kp RET
+          &kp LMETA &none &kp LSHIFT &mkp LCLK &to DEFAULT &none
+      >;
+    };
+  };
+};
 
 
