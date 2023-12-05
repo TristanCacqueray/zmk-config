@@ -1,17 +1,24 @@
--- Copyright (c) 2023 Tristan de Cacqueray
--- SPDX-License-Identifier: MIT
---
--- eval with: ghcid GenZMK.hs --test main
+{-# LANGUAGE BlockArguments #-}
 {-# LANGUAGE LambdaCase #-}
 {-# LANGUAGE OverloadedRecordDot #-}
 {-# LANGUAGE PatternSynonyms #-}
 
 -- {-# OPTIONS_GHC -Wall #-}
 
+-- | Logic to render the ZMK keymap along with svg diagram
+-- Copyright (c) 2023 Tristan de Cacqueray
+-- SPDX-License-Identifier: MIT
+--
+-- eval with: ghcid GenZMK.hs --test main
 module GenZMK where
 
+import Control.Monad
+import Data.Bits
+import qualified Data.ByteString as BS
 import Data.Char
 import Data.List
+import qualified Data.Text as Text
+import qualified Data.Text.Encoding as Text
 
 data ActionType = SwitchWS | Switch | Start | Open | Close | NA | Split | AUp | ALeft | ADown | ARight | Click | Mice | PgUp | PgDn
     deriving (Eq, Show)
@@ -44,11 +51,14 @@ renderIcon = \case
     PgDn -> "⇟ "
     NA -> ""
 
-data Action = A
+data Action = Action
     { icon :: ActionType
     , desc :: String
-    , kbd :: String
+    , kbd :: Kbd
     }
+    deriving (Eq, Show)
+
+data Kbd = NoKey | Key String | Unicode Char | UnicodeShift Char
     deriving (Eq, Show)
 
 data KeyBinding = K
@@ -64,11 +74,18 @@ pattern NN = N
 pattern NNN = N
 
 pattern X :: Action
-pattern X = A NA "" ""
+pattern X = Action NA "" NoKey
+
+pattern A :: ActionType -> String -> String -> Action
+pattern A icon desc key = Action icon desc (Key key)
 
 renderName :: Action -> String
-renderName action = "em_" <> verb <> filter (/= ' ') (map replaceChar action.desc)
+renderName action = uChar <> "em_" <> verb <> filter (/= ' ') (map replaceChar action.desc)
   where
+    uChar = case action.kbd of
+        Unicode _ -> "u"
+        UnicodeShift _ -> "u"
+        _ -> ""
     replaceChar = \case
         '-' -> '_'
         other -> other
@@ -83,6 +100,10 @@ renderName action = "em_" <> verb <> filter (/= ' ') (map replaceChar action.des
         ALeft -> "left_"
         ADown -> "down_"
         ARight -> "right_"
+        Click -> "click_"
+        Mice -> "mice_"
+        PgUp -> "pgup_"
+        PgDn -> "pgdn_"
         NA -> ""
 
 pad :: Int -> String -> String
@@ -97,18 +118,20 @@ renderKey s = s
 
 renderKeyBinding :: Action -> String
 renderKeyBinding action = case action.kbd of
-    "" -> "&none"
-    "C-SPC" -> "&kp LC(SPACE)"
-    'M' : '-' : x : [] -> "&kp LA(" <> pure x <> ")"
-    '&' : rest -> '&' : rest
-    other -> case keyMacro action of
+    NoKey -> "&none"
+    Key "C-SPC" -> "&kp LC(SPACE)"
+    Key ('M' : '-' : x : []) -> "&kp LA(" <> pure x <> ")"
+    Key ('&' : rest) -> '&' : rest
+    Unicode _ -> '&' : renderName action
+    UnicodeShift _ -> '&' : renderName action
+    Key other -> case keyMacro action of
         Nothing -> "&kp " <> other
         Just _ -> '&' : renderName action
 
 keyMacro :: Action -> Maybe String
 keyMacro action = case action.kbd of
-    'C' : '-' : 'x' : ' ' : key -> Just $ "&kp LC(X) &kp " <> renderKey key
-    'C' : '-' : 'c' : ' ' : 'p' : ' ' : key -> Just $ "&kp LC(C) &kp P &kp " <> renderKey key
+    Key ('C' : '-' : 'x' : ' ' : key) -> Just $ "&kp LC(X) &kp " <> renderKey key
+    Key ('C' : '-' : 'c' : ' ' : 'p' : ' ' : key) -> Just $ "&kp LC(C) &kp P &kp " <> renderKey key
     _other -> Nothing
 
 -- ╭─────────────────────────┬─────────────────────────╮
@@ -131,14 +154,29 @@ renderMods :: Layout -> String
 renderMods layout = unlines $ filter (/= "") $ concat $ map renderMod (concat layout)
 
 renderMod :: KeyBinding -> [String]
-renderMod k =
-    base : case (k.shifted, k.meta) of
-        (X, X) -> []
-        _ -> []
+renderMod k = [base]
   where
-    base = case keyMacro k.base of
-        Just macro -> "ZMK_BEHAVIOR(" <> pad 25 (renderName k.base) <> ", macro, bindings = <" <> macro <> ">; wait-ms = <0>; tap-ms = <5>;)"
-        Nothing -> ""
+    base = case k.base.kbd of
+        Unicode c -> "ZMK_UNICODE_SINGLE(" <> pad 23 (renderName k.base) <> ", " <> unicodeSequence c <> ") // " <> pure c
+        UnicodeShift c -> "ZMK_UNICODE_PAIR(" <> pad 25 (renderName k.base) <> ", " <> unicodeSequence c <> ", " <> unicodeSequence (toUpper c) <> ") // " <> pure c <> "/" <> pure (toUpper c)
+        _ -> case keyMacro k.base of
+            Just macro -> "ZMK_BEHAVIOR(" <> pad 25 (renderName k.base) <> ", macro, bindings = <" <> macro <> ">; wait-ms = <0>; tap-ms = <5>;)"
+            Nothing -> ""
+
+unicodeSequence :: Char -> String
+unicodeSequence c = intercalate ", " (map toCode bytes) -- [c1, c2, c3, c4]
+  where
+    toCode = \case
+        15 -> "F"
+        14 -> "E"
+        13 -> "D"
+        12 -> "C"
+        11 -> "B"
+        10 -> "A"
+        n -> "N" <> show n
+    bytes = case BS.unpack (Text.encodeUtf16BE (Text.pack (pure c))) of
+        [b1, b2] -> [b1 `shift` (-4), b1 .&. 0xf, b2 `shift` (-4), b2 .&. 0xf]
+        other -> error $ "invalid unicode: " <> show other <> " for: " <> pure c
 
 renderTemplate :: (String, Layout) -> String
 renderTemplate (name, layout) = include <> unlines [mods, mk_layout]
@@ -154,17 +192,20 @@ renderTemplate (name, layout) = include <> unlines [mods, mk_layout]
         | k.shifted /= X = "&mod_todo"
         | otherwise = renderKeyBinding k.base
 
+svg_ :: Int -> Int -> String -> String
 svg_ width height child = "<svg height=\"" <> show height <> "px\" width=\"" <> show width <> "px\" viewBox=\"0 0 " <> show width <> " " <> show height <> "\" xmlns=\"http://www.w3.org/2000/svg\" xml:space=\"preserve\">" <> child <> "</svg>"
+rect_ :: String -> Int -> Int -> Int -> Int -> String
 rect_ fill width height x y = "<rect style=\"fill:" <> fill <> ";stroke:#c3c3c3\" width=\"" <> show width <> "\" height=\"" <> show height <> "\" x=\"" <> show x <> "\" y=\"" <> show y <> "\"></rect>"
-text_ sz anchor txt x y = "<text style=\"font-size:" <> show sz <> "px;font-family:'monospace'\" x=\"" <> show x <> "\" y=\"" <> show y <> "\" dominant-baseline=\"middle\" text-anchor=\"" <> anchor <> "\" >" <> txt <> "</text>"
+text_ :: Int -> String -> String -> Int -> Int -> String
+text_ sz anchor txt x y = "<text style=\"font-size:" <> show sz <> "px;font-family:'monospace'\" x=\"" <> show x <> "\" y=\"" <> show y <> "\" dominant-baseline=\"central\" text-anchor=\"" <> anchor <> "\" >" <> txt <> "</text>"
 
 renderDoc :: [(String, Layout)] -> String
 renderDoc layouts = svg_ svgWidth svgHeight $ unlines (rect_ "#fff" (svgWidth) (svgHeight) 0 0 : boards)
   where
     ((svgWidth, svgHeight), boards) = foldl go ((0, -1 * bpad), []) layouts
-    go ((prevWidth, prevHeight), boards) layout =
+    go ((prevWidth, prevHeight), boards') layout =
         let ((curWidth, curHeight), board) = renderBoard (prevHeight + bpad + 1) layout
-         in ((max curWidth prevWidth, curHeight + bpad + prevHeight), board : boards)
+         in ((max curWidth prevWidth, curHeight + bpad + prevHeight), board : boards')
     bpad = 17
 
 renderBoard :: Int -> (String, Layout) -> ((Int, Int), String)
@@ -179,20 +220,23 @@ renderBoard startY (name, layout) = (svgDim, unlines $ concat board)
     hpad = 10
     textHeight = (height - 10) `div` 3
 
-    layoutTitle = [text_ 24 "start" ("Layer: " <> name) (kpad * 3) (startY + svgHeight - 30)]
+    layoutTitle = [text_ 24 "start" ("Layer: " <> name) (kpad * 3) (startY + svgHeight - 36)]
     board = [renderRow 0, renderRow 1, renderRow 2, renderRow 3, layoutTitle]
     maxWidth = length $ head layout
-    renderRow row = renderKey <$> zip [0 ..] rowKeys
+    renderRow row = renderKeyLabel <$> zip [0 ..] rowKeys
       where
-        renderKey (col, key) = rect_ "none" width height x y <> baseKey
+        renderKeyLabel (col, key) = rect_ "none" width height x y <> baseKey
           where
-            baseKey = text_ 12 "middle" (renderIcon key.base.icon <> key.base.desc) (kpad + x + width `div` 2) (2 * textHeight + y)
+            (baseSize, baseLabel) = case key.base.kbd of
+                Unicode c -> (23, pure c)
+                UnicodeShift c -> (23, pure c)
+                _ -> (12, renderIcon key.base.icon <> key.base.desc)
+            baseKey = text_ baseSize "middle" baseLabel (kpad + x + width `div` 2) (2 * textHeight + y)
             x = 1 + kpad + thumbsPad + halfPad + col * (width + kpad)
             y = startY + kpad + row * (height + kpad)
             halfPad = if col >= half then hpad else 0
             thumbsPad = if length rowKeys < 7 then ((maxWidth - length rowKeys) `div` 2) * (width + kpad) else 0
 
-        render key = pad 8 key.base.desc
         half = length rowKeys `div` 2
         rowKeys = layout !! row
 
@@ -211,7 +255,7 @@ wmLayout =
     dot = K (A SwitchWS "3   " "&kp LG(D)") X X
     j = K (A SwitchWS "code" "&kp LG(F)") X X
     k = K (A SwitchWS "mail" "&kp LG(G)") X X
-    l = K (A SwitchWS " web" "&kp LG(H)") X X
+    l = K (A SwitchWS "web " "&kp LG(H)") X X
     u = K (A SwitchWS "7   " "&kp LG(J)") X X
     i = K (A SwitchWS "8   " "&kp LG(K)") X X
     o = K (A SwitchWS "9   " "&kp LG(L)") X X
@@ -234,12 +278,11 @@ wmLayout =
 
     trp = K (A NA "set-mark" "&kp LC(SPACE)") X X
 
+trm, ctr, tl, retk, metak, ctrlk, altk :: KeyBinding
 trm = K (A NA "to-def" "&to DEFAULT") X X
 ctr = K (A NA "to-sys" "&to SYSTEM") X X
 tl = K (A NA "SHIFT" "&kp LSHIFT") X X
-
 retk = K (A NA "RETURN" "&kp RET") X X
-
 metak = K (A NA "META" "&kp LMETA") X X
 ctrlk = K (A NA "CTRL" "&kp LCTRL") X X
 altk = K (A NA "ALT" "&kp LALT") X X
@@ -303,6 +346,31 @@ systemLayout =
     c = K (A NA "bt-2" "&bt BT_SEL 2") X X
     d = K (A NA "bt-3" "&bt BT_SEL 3") X X
 
+frenchLayout :: Layout
+frenchLayout =
+    [ [N, NNN, egr, ecu, eci, NNN, N, ugr, ici, foe, push, N]
+    , [N, agr, aci, etr, NNN, eur, N, utr, itr, ocr, N, N]
+    , [N, NNN, NNN, ccd, NNN, NNN, N, NNN, NNN, ddd, N, N]
+    , [N, N, tl, N, trm, N]
+    ]
+  where
+    eur = U "euro" '€'
+    egr = L "e_grave" 'è'
+    ecu = L "e_cute" 'é'
+    eci = L "e_circ" 'ê'
+    etr = L "e_trema" 'ë'
+    agr = L "a_grave" 'à'
+    aci = L "a_circ" 'â'
+    ccd = L "c_cecid" 'ç'
+    ugr = L "u_grave" 'ù'
+    utr = L "u_trema" 'ü'
+    itr = L "i_trema" 'ï'
+    ocr = L "o_circ" 'ô'
+    ici = L "i_circ" 'î'
+    foe = L "oe" 'œ'
+    ddd = U "dotdotdot" '…'
+    push = K (A NA "push-talk" "&kp LS(ESC)") X X
+
 {-
 _emacs :: Layout
 _emacs = []
@@ -321,21 +389,28 @@ _emacs = []
     _rf = K (A "delete-window" "C-x 0") X X
 -}
 
+pattern U :: String -> Char -> KeyBinding
+pattern U name c = K (Action NA name (Unicode c)) X X
+pattern L :: String -> Char -> KeyBinding
+pattern L name c = K (Action NA name (UnicodeShift c)) X X
+
 main :: IO ()
 main = do
-    putStrLn doc
-    writeFile "layers.svg" doc
-    putStrLn gen
-    writeFile "./config/codegen.dtsi" gen
+    when True do
+        putStrLn doc
+        writeFile "layers.svg" doc
+        putStrLn gen
+        writeFile "./config/codegen.dtsi" gen
   where
     layouts =
         ("wm", wmLayout)
             : ("mice", miceLayout)
             : ("system", systemLayout)
+            : ("french", frenchLayout)
             : []
     doc = renderDoc layouts
     gen =
         unlines $
-            ["// Generated config with GenZMK", "// SPDX-License-Identifier: MIT"]
+            ["// Generated config with GenZMK", "// SPDX-License-Identifier: MIT", ""]
                 <> (renderMods . snd <$> layouts)
                 <> (renderTemplate <$> layouts)

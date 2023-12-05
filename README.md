@@ -2,4 +2,4 @@
 
 ![layout](./moonwalker.svg)
 
-![layers](./layers.svg)
+![layers](https://raw.githubusercontent.com/TristanCacqueray/zmk-config/main/layers.svg)

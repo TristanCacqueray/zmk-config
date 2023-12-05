@@ -16,8 +16,6 @@
 
 #include "../zmk-nodefree-config/keypos_def/keypos_42keys.h"
 #include "../zmk-nodefree-config/helper.h"
-#include "../zmk-nodefree-config/international_chars/greek.dtsi"
-#include "../zmk-nodefree-config/international_chars/french.dtsi"
 
 /* Homerow mods */
 #define KEYS_L   LT0 LT1 LT2 LT3 LT4 LT5 LM0 LM1 LM2 LM3 LM4 LM5 LB0 LB1 LB2 LB3 LB4 LB5 // left hand
@@ -47,11 +45,11 @@ MAKE_HRM(hhr, "hold-preferred", &mo, &kp, KEYS_L THUMBS, )   // right-hand Home 
 #define DEFAULT 0
 #define FUN     1
 #define NAV     2
-#define UNICODE 3
-#define GREEK   4
-#define WM      5
-#define MICE    6
-#define SYSTEM  7
+#define WM      3
+#define MICE    4
+#define SYSTEM  5
+#define FRENCH  6
+#define GREEK   7
 
 // hold: momentary layer, shift+tap: toggle layer
 ZMK_BEHAVIOR(fun_tog, mod_morph,
@@ -79,7 +77,7 @@ ZMK_BEHAVIOR(mt_repeat, hold_tap,         \
 
 ZMK_LAYER(base,
 // ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-     &tog MICE     &kp Q         &kp W         &kp E         &kp R         &kp T             &kp Y         &kp U         &kp I         &kp O         &kp P         &sl UNICODE
+     &tog MICE     &kp Q         &kp W         &kp E         &kp R         &kp T             &kp Y         &kp U         &kp I         &kp O         &kp P         &sl FRENCH
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
      &kp TAB       &hll WM A     &hll FUN S    &hml LCTRL D  &hml LALT F   &kp G             &kp H         &hmr LALT J   &hmr LCTRL K  &hlr FUN L    &hhr WM SEMI  &sl GREEK
 // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
@@ -130,29 +128,9 @@ ZMK_LAYER(nav,
   delay-ms = <0>;
 };
 
-#define I_CIRC &fr_i_circumflex
-#define E_CIRC &fr_e_circumflex
-#define A_CIRC &fr_a_circumflex
-#define O_CIRC &fr_o_circumflex
+#include "./codegen.dtsi"
 
-#define I_TREMA &fr_i_diaeresis
-#define E_TREMA &fr_e_diaeresis
-#define U_TREMA &fr_u_diaeresis
-
-ZMK_UNICODE_SINGLE(dotdotdot, N2, N0, N2, N6) // …
-ZMK_UNICODE_SINGLE(euro_sign, N0, N0,  E, N9) // €
-
-ZMK_LAYER(unicode,
-// ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-     &none         &none         &fr_e_grave   &fr_e_acute   E_CIRC        &none             &none         &fr_u_grave   I_CIRC        &fr_oe        &kp LS(ESC)   &none
-// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &none         &fr_a_grave   A_CIRC        E_TREMA       &none         &euro_sign        &none         U_TREMA       I_TREMA       O_CIRC        &none         &none
-// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &none         &none         &none         &fr_c_cedilla &none         &none             &none         &none         &none         &dotdotdot    &el_lambda    &none
-// ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                               &none         &none         &kp LSHIFT        &none         &to DEFAULT   &none
-//                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
-)
+#include "../zmk-nodefree-config/international_chars/greek.dtsi"
 
 ZMK_UNICODE_SINGLE(el_sum,   N2, N2, N9, N5) // ⊕
 ZMK_UNICODE_SINGLE(el_prod,  N0, N0,  D, N7) // ×
@@ -170,5 +148,3 @@ ZMK_LAYER(greek,
                                                &none         &none         &kp LSHIFT        &none         &to DEFAULT   &none
 //                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
 )
-
-#include "./codegen.dtsi"
