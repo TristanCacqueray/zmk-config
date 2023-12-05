@@ -129,22 +129,3 @@ ZMK_LAYER(nav,
 };
 
 #include "./codegen.dtsi"
-
-#include "../zmk-nodefree-config/international_chars/greek.dtsi"
-
-ZMK_UNICODE_SINGLE(el_sum,   N2, N2, N9, N5) // ⊕
-ZMK_UNICODE_SINGLE(el_prod,  N0, N0,  D, N7) // ×
-ZMK_UNICODE_SINGLE(el_nat,   N0, N0, N4,  E) // N
-ZMK_UNICODE_SINGLE(el_real,  N2, N1, N1,  D) // ℝ
-
-ZMK_LAYER(greek,
-// ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-     &none         &el_omega     &el_eta       &el_epsilon   &el_rho       &el_tau           &el_gamma     &el_upsilon   &el_iota      &el_omikron   &el_pi        &none
-// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &none         &el_alpha     &el_sigma     &el_delta     &el_phi       &el_theta         &el_chi       &el_prod      &el_kappa     &el_lambda    &el_psi       &none
-// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &none         &el_zeta      &el_xi        &none         &el_omega     &el_beta          &el_nu        &el_mu        &el_nat       &el_real      &el_sum       &none
-// ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                               &none         &none         &kp LSHIFT        &none         &to DEFAULT   &none
-//                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
-)

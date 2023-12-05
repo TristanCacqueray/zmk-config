@@ -27,6 +27,36 @@ ZMK_UNICODE_PAIR(uem_o_circ               , N0, N0, F, N4, N0, N0, D, N4) // ô/
 ZMK_UNICODE_PAIR(uem_c_cecid              , N0, N0, E, N7, N0, N0, C, N7) // ç/Ç
 ZMK_UNICODE_SINGLE(uem_dotdotdot          , N2, N0, N2, N6) // …
 
+ZMK_UNICODE_PAIR(uem_greek_omega          , N0, N3, C, N9, N0, N3, A, N9) // ω/Ω
+ZMK_UNICODE_PAIR(uem_greek_eta            , N0, N3, B, N7, N0, N3, N9, N7) // η/Η
+ZMK_UNICODE_PAIR(uem_greek_epsilon        , N0, N3, F, N5, N0, N3, N9, N5) // ϵ/Ε
+ZMK_UNICODE_PAIR(uem_greek_rho            , N0, N3, C, N1, N0, N3, A, N1) // ρ/Ρ
+ZMK_UNICODE_PAIR(uem_greek_tau            , N0, N3, C, N4, N0, N3, A, N4) // τ/Τ
+ZMK_UNICODE_PAIR(uem_greek_gamma          , N0, N3, B, N3, N0, N3, N9, N3) // γ/Γ
+ZMK_UNICODE_PAIR(uem_greek_upsilon        , N0, N3, C, N5, N0, N3, A, N5) // υ/Υ
+ZMK_UNICODE_PAIR(uem_greek_iota           , N0, N3, B, N9, N0, N3, N9, N9) // ι/Ι
+ZMK_UNICODE_PAIR(uem_greek_omikron        , N0, N3, B, F, N0, N3, N9, F) // ο/Ο
+ZMK_UNICODE_PAIR(uem_greek_pi             , N0, N3, C, N0, N0, N3, A, N0) // π/Π
+ZMK_UNICODE_PAIR(uem_greek_alpha          , N0, N3, B, N1, N0, N3, N9, N1) // α/Α
+ZMK_UNICODE_PAIR(uem_greek_sigma          , N0, N3, C, N3, N0, N3, A, N3) // σ/Σ
+ZMK_UNICODE_PAIR(uem_greek_delta          , N0, N3, B, N4, N0, N3, N9, N4) // δ/Δ
+ZMK_UNICODE_PAIR(uem_greek_phi            , N0, N3, C, N6, N0, N3, A, N6) // φ/Φ
+ZMK_UNICODE_PAIR(uem_greek_theta          , N0, N3, B, N8, N0, N3, N9, N8) // θ/Θ
+ZMK_UNICODE_PAIR(uem_greek_chi            , N0, N3, C, N7, N0, N3, A, N7) // χ/Χ
+ZMK_UNICODE_SINGLE(uem_greek_prod         , N0, N0, D, N7) // ×
+ZMK_UNICODE_PAIR(uem_greek_kappa          , N0, N3, B, A, N0, N3, N9, A) // κ/Κ
+ZMK_UNICODE_PAIR(uem_greek_lambda         , N0, N3, B, B, N0, N3, N9, B) // λ/Λ
+ZMK_UNICODE_PAIR(uem_greek_psi            , N0, N3, C, N8, N0, N3, A, N8) // ψ/Ψ
+ZMK_UNICODE_PAIR(uem_greek_zeta           , N0, N3, B, N6, N0, N3, N9, N6) // ζ/Ζ
+ZMK_UNICODE_PAIR(uem_greek_xi             , N0, N3, B, E, N0, N3, N9, E) // ξ/Ξ
+ZMK_UNICODE_PAIR(uem_greek_omegta         , N0, N3, C, N9, N0, N3, A, N9) // ω/Ω
+ZMK_UNICODE_PAIR(uem_greek_beta           , N0, N3, B, N2, N0, N3, N9, N2) // β/Β
+ZMK_UNICODE_PAIR(uem_greek_nu             , N0, N3, B, D, N0, N3, N9, D) // ν/Ν
+ZMK_UNICODE_PAIR(uem_greek_mu             , N0, N3, B, C, N0, N3, N9, C) // μ/Μ
+ZMK_UNICODE_SINGLE(uem_greek_nat          , N0, N0, N4, E) // N
+ZMK_UNICODE_SINGLE(uem_greek_real         , N2, N1, N1, D) // ℝ
+ZMK_UNICODE_SINGLE(uem_greek_sum          , N2, N2, N9, N5) // ⊕
+
 
 / {
   keymap {
@@ -85,6 +115,22 @@ ZMK_UNICODE_SINGLE(uem_dotdotdot          , N2, N0, N2, N6) // …
           &none &none &uem_e_grave &uem_e_cute &uem_e_circ &none &none &uem_u_grave &uem_i_circ &uem_oe &kp LS(ESC) &none
           &none &uem_a_grave &uem_a_circ &uem_e_trema &none &uem_euro &none &uem_u_trema &uem_i_trema &uem_o_circ &none &none
           &none &none &none &uem_c_cecid &none &none &none &none &none &uem_dotdotdot &none &none
+          &none &none &kp LSHIFT &none &to DEFAULT &none
+      >;
+    };
+  };
+};
+
+
+
+/ {
+  keymap {
+    compatible = "zmk,keymap";
+    layer_greek {
+      bindings = <
+          &none &uem_greek_omega &uem_greek_eta &uem_greek_epsilon &uem_greek_rho &uem_greek_tau &uem_greek_gamma &uem_greek_upsilon &uem_greek_iota &uem_greek_omikron &uem_greek_pi &none
+          &none &uem_greek_alpha &uem_greek_sigma &uem_greek_delta &uem_greek_phi &uem_greek_theta &uem_greek_chi &uem_greek_prod &uem_greek_kappa &uem_greek_lambda &uem_greek_psi &none
+          &none &uem_greek_zeta &uem_greek_xi &none &uem_greek_omegta &uem_greek_beta &uem_greek_nu &uem_greek_mu &uem_greek_nat &uem_greek_real &uem_greek_sum &none
           &none &none &kp LSHIFT &none &to DEFAULT &none
       >;
     };

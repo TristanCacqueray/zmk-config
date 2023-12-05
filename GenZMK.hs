@@ -371,6 +371,45 @@ frenchLayout =
     ddd = U "dotdotdot" '…'
     push = K (A NA "push-talk" "&kp LS(ESC)") X X
 
+greekLayout :: Layout
+greekLayout =
+    [ [N, q, w, e, r, t, y, u, i, o, p, N]
+    , [N, a, s, d, f, g, h, j, k, l, se, N]
+    , [N, z, x, c, v, b, n, m, ca, cb, cc, N]
+    , [N, N, tl, N, trm, N]
+    ]
+  where
+    q = L "greek_omega" 'ω'
+    w = L "greek_eta" 'η'
+    e = L "greek_epsilon" 'ϵ'
+    r = L "greek_rho" 'ρ'
+    t = L "greek_tau" 'τ'
+    y = L "greek_gamma" 'γ'
+    u = L "greek_upsilon" 'υ'
+    i = L "greek_iota" 'ι'
+    o = L "greek_omikron" 'ο'
+    p = L "greek_pi" 'π'
+    a = L "greek_alpha" 'α'
+    s = L "greek_sigma" 'σ'
+    d = L "greek_delta" 'δ'
+    f = L "greek_phi" 'φ'
+    g = L "greek_theta" 'θ'
+    h = L "greek_chi" 'χ'
+    j = U "greek_prod" '×'
+    k = L "greek_kappa" 'κ'
+    l = L "greek_lambda" 'λ'
+    se = L "greek_psi" 'ψ'
+    z = L "greek_zeta" 'ζ'
+    x = L "greek_xi" 'ξ'
+    c = N
+    v = L "greek_omegta" 'ω'
+    b = L "greek_beta" 'β'
+    n = L "greek_nu" 'ν'
+    m = L "greek_mu" 'μ'
+    ca = U "greek_nat" 'N'
+    cb = U "greek_real" 'ℝ'
+    cc = U "greek_sum" '⊕'
+
 {-
 _emacs :: Layout
 _emacs = []
@@ -407,6 +446,7 @@ main = do
             : ("mice", miceLayout)
             : ("system", systemLayout)
             : ("french", frenchLayout)
+            : ("greek", greekLayout)
             : []
     doc = renderDoc layouts
     gen =
