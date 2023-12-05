@@ -11,7 +11,7 @@
 module GenZMK where
 
 import Data.Char
-import Data.List (intercalate)
+import Data.List
 
 data ActionType = SwitchWS | Switch | Start | Open | Close | NA | Split | AUp | ALeft | ADown | ARight | Click | Mice | PgUp | PgDn
     deriving (Eq, Show)
@@ -67,7 +67,7 @@ pattern X :: Action
 pattern X = A NA "" ""
 
 renderName :: Action -> String
-renderName action = "em_" <> verb <> map replaceChar action.desc
+renderName action = "em_" <> verb <> filter (/= ' ') (map replaceChar action.desc)
   where
     replaceChar = \case
         '-' -> '_'
@@ -141,9 +141,12 @@ renderMod k =
         Nothing -> ""
 
 renderTemplate :: (String, Layout) -> String
-renderTemplate (name, layout) = unlines [mods, mk_layout]
+renderTemplate (name, layout) = include <> unlines [mods, mk_layout]
   where
     mods = ""
+    include
+        | "&bt " `isInfixOf` bindings = "#include <dt-bindings/zmk/bt.h>\n"
+        | otherwise = ""
     mk_layout = unlines ["/ {", "  keymap {", "    compatible = \"zmk,keymap\";", "    layer_" <> name <> " {", "      bindings = <", bindings <> "      >;", "    };", "  };", "};"]
     bindings = unlines $ map (mappend "        ") $ map renderRow layout
     renderRow row = "  " <> intercalate " " (map renderLayoutKey row)
@@ -151,16 +154,16 @@ renderTemplate (name, layout) = unlines [mods, mk_layout]
         | k.shifted /= X = "&mod_todo"
         | otherwise = renderKeyBinding k.base
 
-svg_ width height child = "<svg height=\"" <> show height <> "px\" width=\"" <> show width <> "px\" viewBox=\"0 0 " <> show width <> " " <> show height <> "\" xmlns=\"http://www.w3.org/2000/svg\">" <> child <> "</svg>"
-rect_ width height x y = "<rect style=\"fill:none;stroke:#c3c3c3\" width=\"" <> show width <> "\" height=\"" <> show height <> "\" x=\"" <> show x <> "\" y=\"" <> show y <> "\"></rect>"
-text_ sz txt x y = "<text style=\"font-size:" <> show sz <> "px;font-family:'monospace'\" x=\"" <> show x <> "\" y=\"" <> show y <> "\">" <> txt <> "</text>"
+svg_ width height child = "<svg height=\"" <> show height <> "px\" width=\"" <> show width <> "px\" viewBox=\"0 0 " <> show width <> " " <> show height <> "\" xmlns=\"http://www.w3.org/2000/svg\" xml:space=\"preserve\">" <> child <> "</svg>"
+rect_ fill width height x y = "<rect style=\"fill:" <> fill <> ";stroke:#c3c3c3\" width=\"" <> show width <> "\" height=\"" <> show height <> "\" x=\"" <> show x <> "\" y=\"" <> show y <> "\"></rect>"
+text_ sz anchor txt x y = "<text style=\"font-size:" <> show sz <> "px;font-family:'monospace'\" x=\"" <> show x <> "\" y=\"" <> show y <> "\" dominant-baseline=\"middle\" text-anchor=\"" <> anchor <> "\" >" <> txt <> "</text>"
 
 renderDoc :: [(String, Layout)] -> String
-renderDoc layouts = svg_ svgWidth svgHeight $ unlines $ boards
+renderDoc layouts = svg_ svgWidth svgHeight $ unlines (rect_ "#fff" (svgWidth) (svgHeight) 0 0 : boards)
   where
     ((svgWidth, svgHeight), boards) = foldl go ((0, -1 * bpad), []) layouts
     go ((prevWidth, prevHeight), boards) layout =
-        let ((curWidth, curHeight), board) = renderBoard (prevHeight + bpad) layout
+        let ((curWidth, curHeight), board) = renderBoard (prevHeight + bpad + 1) layout
          in ((max curWidth prevWidth, curHeight + bpad + prevHeight), board : boards)
     bpad = 17
 
@@ -176,15 +179,15 @@ renderBoard startY (name, layout) = (svgDim, unlines $ concat board)
     hpad = 10
     textHeight = (height - 10) `div` 3
 
-    layoutTitle = [text_ 24 ("Layer: " <> name) (kpad * 3) (startY + svgHeight - 30)]
+    layoutTitle = [text_ 24 "start" ("Layer: " <> name) (kpad * 3) (startY + svgHeight - 30)]
     board = [renderRow 0, renderRow 1, renderRow 2, renderRow 3, layoutTitle]
     maxWidth = length $ head layout
     renderRow row = renderKey <$> zip [0 ..] rowKeys
       where
-        renderKey (col, key) = rect_ width height x y <> baseKey
+        renderKey (col, key) = rect_ "none" width height x y <> baseKey
           where
-            baseKey = text_ 12 (renderIcon key.base.icon <> key.base.desc) (kpad + x) (2 * textHeight + y)
-            x = kpad + thumbsPad + halfPad + col * (width + kpad)
+            baseKey = text_ 12 "middle" (renderIcon key.base.icon <> key.base.desc) (kpad + x + width `div` 2) (2 * textHeight + y)
+            x = 1 + kpad + thumbsPad + halfPad + col * (width + kpad)
             y = startY + kpad + row * (height + kpad)
             halfPad = if col >= half then hpad else 0
             thumbsPad = if length rowKeys < 7 then ((maxWidth - length rowKeys) `div` 2) * (width + kpad) else 0
@@ -203,26 +206,26 @@ wmLayout =
   where
     (w, r, t, y, a, g, n, λ, tlf, tlm, tlp, trf) =
         (N, N, N, N, N, N, N, N, N, N, N, N)
-    m = K (A SwitchWS "1" "&kp LG(A)") X X
-    μ = K (A SwitchWS "2" "&kp LG(S)") X X
-    dot = K (A SwitchWS "3" "&kp LG(D)") X X
+    m = K (A SwitchWS "1   " "&kp LG(A)") X X
+    μ = K (A SwitchWS "2   " "&kp LG(S)") X X
+    dot = K (A SwitchWS "3   " "&kp LG(D)") X X
     j = K (A SwitchWS "code" "&kp LG(F)") X X
     k = K (A SwitchWS "mail" "&kp LG(G)") X X
     l = K (A SwitchWS " web" "&kp LG(H)") X X
-    u = K (A SwitchWS "7" "&kp LG(J)") X X
-    i = K (A SwitchWS "8" "&kp LG(K)") X X
-    o = K (A SwitchWS "9" "&kp LG(L)") X X
+    u = K (A SwitchWS "7   " "&kp LG(J)") X X
+    i = K (A SwitchWS "8   " "&kp LG(K)") X X
+    o = K (A SwitchWS "9   " "&kp LG(L)") X X
     lm = K (A Switch "win" "&kp LG(TAB)") X X
 
     h = K (A Start "terminal" "&kp LG(RET)") X X
 
     ψ = K (A Open "proj-file" "C-c p f") X X
-    p = K (A Open "project" "C-c p p") X X
+    p = K (A Open "project  " "C-c p p") X X
     b = K (A Switch "buffer" "C-x b") X X
-    z = K (A Close "win  " "C-x 0") X X
+    z = K (A Close "win       " "C-x 0") X X
     x = K (A Close "other-win " "C-x 1") X X
     c = K (A Split "horiz" "C-x 2") X X
-    v = K (A Split "vert" "C-x 3") X X
+    v = K (A Split "vert " "C-x 3") X X
 
     e = K (A AUp "win" "&kp LS(UP)") X X
     s = K (A ALeft "win" "&kp LS(LEFT)") X X
@@ -232,7 +235,7 @@ wmLayout =
     trp = K (A NA "set-mark" "&kp LC(SPACE)") X X
 
 trm = K (A NA "to-def" "&to DEFAULT") X X
-ctr = K (A NA "to-ctrl" "&to CTRL") X X
+ctr = K (A NA "to-sys" "&to SYSTEM") X X
 tl = K (A NA "SHIFT" "&kp LSHIFT") X X
 
 retk = K (A NA "RETURN" "&kp RET") X X
@@ -251,9 +254,9 @@ miceLayout =
   where
     (c, v) = (ctrlk, altk)
     lclk = "&mkp LCLK"
-    u = K (A Click "clk-left" lclk) X X
+    u = K (A Click "clk-left " lclk) X X
     o = K (A Click "clk-right" "&mkp RCLK") X X
-    m = K (A Click "clk-mid" "&mkp MCLK") X X
+    m = K (A Click "clk-mid  " "&mkp MCLK") X X
 
     mice dir = A Mice (show dir) binding
       where
@@ -285,6 +288,21 @@ miceLayout =
     g = K (A PgUp "pg-up" "&kp PG_UP") X X
     b = K (A PgDn "pg-dn" "&kp PG_DN") X X
 
+systemLayout :: Layout
+systemLayout =
+    [ [trm, q, N, N, N, N, N, N, N, N, N, N]
+    , [trm, N, N, N, N, N, N, N, N, N, N, N]
+    , [N, N, N, N, N, r, a, b, c, d, N, N]
+    , [N, N, N, N, trm, N]
+    ]
+  where
+    r = K (A NA "bt-clear" "&bt BT_CLR") X X
+    q = K (A NA "out-toggle" "&out OUT_TOG") X X
+    a = K (A NA "bt-0" "&bt BT_SEL 0") X X
+    b = K (A NA "bt-1" "&bt BT_SEL 1") X X
+    c = K (A NA "bt-2" "&bt BT_SEL 2") X X
+    d = K (A NA "bt-3" "&bt BT_SEL 3") X X
+
 {-
 _emacs :: Layout
 _emacs = []
@@ -310,7 +328,11 @@ main = do
     putStrLn gen
     writeFile "./config/codegen.dtsi" gen
   where
-    layouts = [("wm", wmLayout), ("mice", miceLayout)]
+    layouts =
+        ("wm", wmLayout)
+            : ("mice", miceLayout)
+            : ("system", systemLayout)
+            : []
     doc = renderDoc layouts
     gen =
         unlines $

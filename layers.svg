@@ -1,89 +1,134 @@
-<svg height="533px" width="1252px" viewBox="0 0 1252 533" xmlns="http://www.w3.org/2000/svg"><rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="3" y="278"></rect><text style="font-size:12px;font-family:'monospace'" x="6" y="310">to-def</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="106" y="278"></rect><text style="font-size:12px;font-family:'monospace'" x="109" y="310"></text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="209" y="278"></rect><text style="font-size:12px;font-family:'monospace'" x="212" y="310">← back-hist</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="312" y="278"></rect><text style="font-size:12px;font-family:'monospace'" x="315" y="310">↑ </text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="415" y="278"></rect><text style="font-size:12px;font-family:'monospace'" x="418" y="310">→ fwd-hist</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="518" y="278"></rect><text style="font-size:12px;font-family:'monospace'" x="521" y="310"></text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="631" y="278"></rect><text style="font-size:12px;font-family:'monospace'" x="634" y="310"></text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="734" y="278"></rect><text style="font-size:12px;font-family:'monospace'" x="737" y="310">🖟 clk-left</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="837" y="278"></rect><text style="font-size:12px;font-family:'monospace'" x="840" y="310">🕹 up</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="940" y="278"></rect><text style="font-size:12px;font-family:'monospace'" x="943" y="310">🖟 clk-right</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="1043" y="278"></rect><text style="font-size:12px;font-family:'monospace'" x="1046" y="310"></text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="1146" y="278"></rect><text style="font-size:12px;font-family:'monospace'" x="1149" y="310"></text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="3" y="341"></rect><text style="font-size:12px;font-family:'monospace'" x="6" y="373">to-ctrl</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="106" y="341"></rect><text style="font-size:12px;font-family:'monospace'" x="109" y="373"></text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="209" y="341"></rect><text style="font-size:12px;font-family:'monospace'" x="212" y="373">← </text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="312" y="341"></rect><text style="font-size:12px;font-family:'monospace'" x="315" y="373">↓ </text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="415" y="341"></rect><text style="font-size:12px;font-family:'monospace'" x="418" y="373">→ </text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="518" y="341"></rect><text style="font-size:12px;font-family:'monospace'" x="521" y="373">⇞ pg-up</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="631" y="341"></rect><text style="font-size:12px;font-family:'monospace'" x="634" y="373">⇞ scroll-up</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="734" y="341"></rect><text style="font-size:12px;font-family:'monospace'" x="737" y="373">🕹 left</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="837" y="341"></rect><text style="font-size:12px;font-family:'monospace'" x="840" y="373">🕹 down</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="940" y="341"></rect><text style="font-size:12px;font-family:'monospace'" x="943" y="373">🕹 right</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="1043" y="341"></rect><text style="font-size:12px;font-family:'monospace'" x="1046" y="373"></text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="1146" y="341"></rect><text style="font-size:12px;font-family:'monospace'" x="1149" y="373"></text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="3" y="404"></rect><text style="font-size:12px;font-family:'monospace'" x="6" y="436"></text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="106" y="404"></rect><text style="font-size:12px;font-family:'monospace'" x="109" y="436"></text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="209" y="404"></rect><text style="font-size:12px;font-family:'monospace'" x="212" y="436"></text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="312" y="404"></rect><text style="font-size:12px;font-family:'monospace'" x="315" y="436">CTRL</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="415" y="404"></rect><text style="font-size:12px;font-family:'monospace'" x="418" y="436">ALT</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="518" y="404"></rect><text style="font-size:12px;font-family:'monospace'" x="521" y="436">⇟ pg-dn</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="631" y="404"></rect><text style="font-size:12px;font-family:'monospace'" x="634" y="436">⇟ scroll-dn</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="734" y="404"></rect><text style="font-size:12px;font-family:'monospace'" x="737" y="436">🖟 clk-mid</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="837" y="404"></rect><text style="font-size:12px;font-family:'monospace'" x="840" y="436"></text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="940" y="404"></rect><text style="font-size:12px;font-family:'monospace'" x="943" y="436"></text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="1043" y="404"></rect><text style="font-size:12px;font-family:'monospace'" x="1046" y="436"></text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="1146" y="404"></rect><text style="font-size:12px;font-family:'monospace'" x="1149" y="436">RETURN</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="312" y="467"></rect><text style="font-size:12px;font-family:'monospace'" x="315" y="499">META</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="415" y="467"></rect><text style="font-size:12px;font-family:'monospace'" x="418" y="499"></text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="518" y="467"></rect><text style="font-size:12px;font-family:'monospace'" x="521" y="499">SHIFT</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="631" y="467"></rect><text style="font-size:12px;font-family:'monospace'" x="634" y="499">🖟 clk-left</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="734" y="467"></rect><text style="font-size:12px;font-family:'monospace'" x="737" y="499">to-def</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="837" y="467"></rect><text style="font-size:12px;font-family:'monospace'" x="840" y="499"></text>
-<text style="font-size:24px;font-family:'monospace'" x="9" y="503">Layer: mice</text>
+<svg height="808px" width="1252px" viewBox="0 0 1252 808" xmlns="http://www.w3.org/2000/svg" xml:space="preserve"><rect style="fill:#fff;stroke:#c3c3c3" width="1252" height="808" x="0" y="0"></rect>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="4" y="554"></rect><text style="font-size:12px;font-family:'monospace'" x="57" y="586" dominant-baseline="middle" text-anchor="middle" >to-def</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="107" y="554"></rect><text style="font-size:12px;font-family:'monospace'" x="160" y="586" dominant-baseline="middle" text-anchor="middle" >out-toggle</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="210" y="554"></rect><text style="font-size:12px;font-family:'monospace'" x="263" y="586" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="313" y="554"></rect><text style="font-size:12px;font-family:'monospace'" x="366" y="586" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="416" y="554"></rect><text style="font-size:12px;font-family:'monospace'" x="469" y="586" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="519" y="554"></rect><text style="font-size:12px;font-family:'monospace'" x="572" y="586" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="632" y="554"></rect><text style="font-size:12px;font-family:'monospace'" x="685" y="586" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="735" y="554"></rect><text style="font-size:12px;font-family:'monospace'" x="788" y="586" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="838" y="554"></rect><text style="font-size:12px;font-family:'monospace'" x="891" y="586" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="941" y="554"></rect><text style="font-size:12px;font-family:'monospace'" x="994" y="586" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="1044" y="554"></rect><text style="font-size:12px;font-family:'monospace'" x="1097" y="586" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="1147" y="554"></rect><text style="font-size:12px;font-family:'monospace'" x="1200" y="586" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="4" y="617"></rect><text style="font-size:12px;font-family:'monospace'" x="57" y="649" dominant-baseline="middle" text-anchor="middle" >to-def</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="107" y="617"></rect><text style="font-size:12px;font-family:'monospace'" x="160" y="649" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="210" y="617"></rect><text style="font-size:12px;font-family:'monospace'" x="263" y="649" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="313" y="617"></rect><text style="font-size:12px;font-family:'monospace'" x="366" y="649" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="416" y="617"></rect><text style="font-size:12px;font-family:'monospace'" x="469" y="649" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="519" y="617"></rect><text style="font-size:12px;font-family:'monospace'" x="572" y="649" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="632" y="617"></rect><text style="font-size:12px;font-family:'monospace'" x="685" y="649" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="735" y="617"></rect><text style="font-size:12px;font-family:'monospace'" x="788" y="649" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="838" y="617"></rect><text style="font-size:12px;font-family:'monospace'" x="891" y="649" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="941" y="617"></rect><text style="font-size:12px;font-family:'monospace'" x="994" y="649" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="1044" y="617"></rect><text style="font-size:12px;font-family:'monospace'" x="1097" y="649" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="1147" y="617"></rect><text style="font-size:12px;font-family:'monospace'" x="1200" y="649" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="4" y="680"></rect><text style="font-size:12px;font-family:'monospace'" x="57" y="712" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="107" y="680"></rect><text style="font-size:12px;font-family:'monospace'" x="160" y="712" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="210" y="680"></rect><text style="font-size:12px;font-family:'monospace'" x="263" y="712" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="313" y="680"></rect><text style="font-size:12px;font-family:'monospace'" x="366" y="712" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="416" y="680"></rect><text style="font-size:12px;font-family:'monospace'" x="469" y="712" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="519" y="680"></rect><text style="font-size:12px;font-family:'monospace'" x="572" y="712" dominant-baseline="middle" text-anchor="middle" >bt-clear</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="632" y="680"></rect><text style="font-size:12px;font-family:'monospace'" x="685" y="712" dominant-baseline="middle" text-anchor="middle" >bt-0</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="735" y="680"></rect><text style="font-size:12px;font-family:'monospace'" x="788" y="712" dominant-baseline="middle" text-anchor="middle" >bt-1</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="838" y="680"></rect><text style="font-size:12px;font-family:'monospace'" x="891" y="712" dominant-baseline="middle" text-anchor="middle" >bt-2</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="941" y="680"></rect><text style="font-size:12px;font-family:'monospace'" x="994" y="712" dominant-baseline="middle" text-anchor="middle" >bt-3</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="1044" y="680"></rect><text style="font-size:12px;font-family:'monospace'" x="1097" y="712" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="1147" y="680"></rect><text style="font-size:12px;font-family:'monospace'" x="1200" y="712" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="313" y="743"></rect><text style="font-size:12px;font-family:'monospace'" x="366" y="775" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="416" y="743"></rect><text style="font-size:12px;font-family:'monospace'" x="469" y="775" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="519" y="743"></rect><text style="font-size:12px;font-family:'monospace'" x="572" y="775" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="632" y="743"></rect><text style="font-size:12px;font-family:'monospace'" x="685" y="775" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="735" y="743"></rect><text style="font-size:12px;font-family:'monospace'" x="788" y="775" dominant-baseline="middle" text-anchor="middle" >to-def</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="838" y="743"></rect><text style="font-size:12px;font-family:'monospace'" x="891" y="775" dominant-baseline="middle" text-anchor="middle" ></text>
+<text style="font-size:24px;font-family:'monospace'" x="9" y="779" dominant-baseline="middle" text-anchor="start" >Layer: system</text>
 
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="3" y="3"></rect><text style="font-size:12px;font-family:'monospace'" x="6" y="35"></text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="106" y="3"></rect><text style="font-size:12px;font-family:'monospace'" x="109" y="35"></text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="209" y="3"></rect><text style="font-size:12px;font-family:'monospace'" x="212" y="35"></text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="312" y="3"></rect><text style="font-size:12px;font-family:'monospace'" x="315" y="35">↑ win</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="415" y="3"></rect><text style="font-size:12px;font-family:'monospace'" x="418" y="35"></text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="518" y="3"></rect><text style="font-size:12px;font-family:'monospace'" x="521" y="35"></text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="631" y="3"></rect><text style="font-size:12px;font-family:'monospace'" x="634" y="35"></text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="734" y="3"></rect><text style="font-size:12px;font-family:'monospace'" x="737" y="35">💻 7</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="837" y="3"></rect><text style="font-size:12px;font-family:'monospace'" x="840" y="35">💻 8</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="940" y="3"></rect><text style="font-size:12px;font-family:'monospace'" x="943" y="35">💻 9</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="1043" y="3"></rect><text style="font-size:12px;font-family:'monospace'" x="1046" y="35">📂 project</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="1146" y="3"></rect><text style="font-size:12px;font-family:'monospace'" x="1149" y="35"></text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="3" y="66"></rect><text style="font-size:12px;font-family:'monospace'" x="6" y="98">⇄ win</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="106" y="66"></rect><text style="font-size:12px;font-family:'monospace'" x="109" y="98"></text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="209" y="66"></rect><text style="font-size:12px;font-family:'monospace'" x="212" y="98">← win</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="312" y="66"></rect><text style="font-size:12px;font-family:'monospace'" x="315" y="98">↓ win</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="415" y="66"></rect><text style="font-size:12px;font-family:'monospace'" x="418" y="98">→ win</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="518" y="66"></rect><text style="font-size:12px;font-family:'monospace'" x="521" y="98"></text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="631" y="66"></rect><text style="font-size:12px;font-family:'monospace'" x="634" y="98">🚀 terminal</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="734" y="66"></rect><text style="font-size:12px;font-family:'monospace'" x="737" y="98">💻 code</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="837" y="66"></rect><text style="font-size:12px;font-family:'monospace'" x="840" y="98">💻 mail</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="940" y="66"></rect><text style="font-size:12px;font-family:'monospace'" x="943" y="98">💻  web</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="1043" y="66"></rect><text style="font-size:12px;font-family:'monospace'" x="1046" y="98">📂 proj-file</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="1146" y="66"></rect><text style="font-size:12px;font-family:'monospace'" x="1149" y="98"></text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="3" y="129"></rect><text style="font-size:12px;font-family:'monospace'" x="6" y="161"></text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="106" y="129"></rect><text style="font-size:12px;font-family:'monospace'" x="109" y="161">⌧ win  </text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="209" y="129"></rect><text style="font-size:12px;font-family:'monospace'" x="212" y="161">⌧ other-win </text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="312" y="129"></rect><text style="font-size:12px;font-family:'monospace'" x="315" y="161">✂ horiz</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="415" y="129"></rect><text style="font-size:12px;font-family:'monospace'" x="418" y="161">✂ vert</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="518" y="129"></rect><text style="font-size:12px;font-family:'monospace'" x="521" y="161">⇄ buffer</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="631" y="129"></rect><text style="font-size:12px;font-family:'monospace'" x="634" y="161"></text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="734" y="129"></rect><text style="font-size:12px;font-family:'monospace'" x="737" y="161">💻 1</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="837" y="129"></rect><text style="font-size:12px;font-family:'monospace'" x="840" y="161">💻 2</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="940" y="129"></rect><text style="font-size:12px;font-family:'monospace'" x="943" y="161">💻 3</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="1043" y="129"></rect><text style="font-size:12px;font-family:'monospace'" x="1046" y="161"></text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="1146" y="129"></rect><text style="font-size:12px;font-family:'monospace'" x="1149" y="161"></text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="312" y="192"></rect><text style="font-size:12px;font-family:'monospace'" x="315" y="224"></text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="415" y="192"></rect><text style="font-size:12px;font-family:'monospace'" x="418" y="224"></text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="518" y="192"></rect><text style="font-size:12px;font-family:'monospace'" x="521" y="224"></text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="631" y="192"></rect><text style="font-size:12px;font-family:'monospace'" x="634" y="224">set-mark</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="734" y="192"></rect><text style="font-size:12px;font-family:'monospace'" x="737" y="224">to-def</text>
-<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="837" y="192"></rect><text style="font-size:12px;font-family:'monospace'" x="840" y="224"></text>
-<text style="font-size:24px;font-family:'monospace'" x="9" y="228">Layer: wm</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="4" y="279"></rect><text style="font-size:12px;font-family:'monospace'" x="57" y="311" dominant-baseline="middle" text-anchor="middle" >to-def</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="107" y="279"></rect><text style="font-size:12px;font-family:'monospace'" x="160" y="311" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="210" y="279"></rect><text style="font-size:12px;font-family:'monospace'" x="263" y="311" dominant-baseline="middle" text-anchor="middle" >← back-hist</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="313" y="279"></rect><text style="font-size:12px;font-family:'monospace'" x="366" y="311" dominant-baseline="middle" text-anchor="middle" >↑ </text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="416" y="279"></rect><text style="font-size:12px;font-family:'monospace'" x="469" y="311" dominant-baseline="middle" text-anchor="middle" >→ fwd-hist</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="519" y="279"></rect><text style="font-size:12px;font-family:'monospace'" x="572" y="311" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="632" y="279"></rect><text style="font-size:12px;font-family:'monospace'" x="685" y="311" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="735" y="279"></rect><text style="font-size:12px;font-family:'monospace'" x="788" y="311" dominant-baseline="middle" text-anchor="middle" >🖟 clk-left </text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="838" y="279"></rect><text style="font-size:12px;font-family:'monospace'" x="891" y="311" dominant-baseline="middle" text-anchor="middle" >🕹 up</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="941" y="279"></rect><text style="font-size:12px;font-family:'monospace'" x="994" y="311" dominant-baseline="middle" text-anchor="middle" >🖟 clk-right</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="1044" y="279"></rect><text style="font-size:12px;font-family:'monospace'" x="1097" y="311" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="1147" y="279"></rect><text style="font-size:12px;font-family:'monospace'" x="1200" y="311" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="4" y="342"></rect><text style="font-size:12px;font-family:'monospace'" x="57" y="374" dominant-baseline="middle" text-anchor="middle" >to-sys</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="107" y="342"></rect><text style="font-size:12px;font-family:'monospace'" x="160" y="374" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="210" y="342"></rect><text style="font-size:12px;font-family:'monospace'" x="263" y="374" dominant-baseline="middle" text-anchor="middle" >← </text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="313" y="342"></rect><text style="font-size:12px;font-family:'monospace'" x="366" y="374" dominant-baseline="middle" text-anchor="middle" >↓ </text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="416" y="342"></rect><text style="font-size:12px;font-family:'monospace'" x="469" y="374" dominant-baseline="middle" text-anchor="middle" >→ </text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="519" y="342"></rect><text style="font-size:12px;font-family:'monospace'" x="572" y="374" dominant-baseline="middle" text-anchor="middle" >⇞ pg-up</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="632" y="342"></rect><text style="font-size:12px;font-family:'monospace'" x="685" y="374" dominant-baseline="middle" text-anchor="middle" >⇞ scroll-up</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="735" y="342"></rect><text style="font-size:12px;font-family:'monospace'" x="788" y="374" dominant-baseline="middle" text-anchor="middle" >🕹 left</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="838" y="342"></rect><text style="font-size:12px;font-family:'monospace'" x="891" y="374" dominant-baseline="middle" text-anchor="middle" >🕹 down</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="941" y="342"></rect><text style="font-size:12px;font-family:'monospace'" x="994" y="374" dominant-baseline="middle" text-anchor="middle" >🕹 right</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="1044" y="342"></rect><text style="font-size:12px;font-family:'monospace'" x="1097" y="374" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="1147" y="342"></rect><text style="font-size:12px;font-family:'monospace'" x="1200" y="374" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="4" y="405"></rect><text style="font-size:12px;font-family:'monospace'" x="57" y="437" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="107" y="405"></rect><text style="font-size:12px;font-family:'monospace'" x="160" y="437" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="210" y="405"></rect><text style="font-size:12px;font-family:'monospace'" x="263" y="437" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="313" y="405"></rect><text style="font-size:12px;font-family:'monospace'" x="366" y="437" dominant-baseline="middle" text-anchor="middle" >CTRL</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="416" y="405"></rect><text style="font-size:12px;font-family:'monospace'" x="469" y="437" dominant-baseline="middle" text-anchor="middle" >ALT</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="519" y="405"></rect><text style="font-size:12px;font-family:'monospace'" x="572" y="437" dominant-baseline="middle" text-anchor="middle" >⇟ pg-dn</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="632" y="405"></rect><text style="font-size:12px;font-family:'monospace'" x="685" y="437" dominant-baseline="middle" text-anchor="middle" >⇟ scroll-dn</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="735" y="405"></rect><text style="font-size:12px;font-family:'monospace'" x="788" y="437" dominant-baseline="middle" text-anchor="middle" >🖟 clk-mid  </text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="838" y="405"></rect><text style="font-size:12px;font-family:'monospace'" x="891" y="437" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="941" y="405"></rect><text style="font-size:12px;font-family:'monospace'" x="994" y="437" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="1044" y="405"></rect><text style="font-size:12px;font-family:'monospace'" x="1097" y="437" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="1147" y="405"></rect><text style="font-size:12px;font-family:'monospace'" x="1200" y="437" dominant-baseline="middle" text-anchor="middle" >RETURN</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="313" y="468"></rect><text style="font-size:12px;font-family:'monospace'" x="366" y="500" dominant-baseline="middle" text-anchor="middle" >META</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="416" y="468"></rect><text style="font-size:12px;font-family:'monospace'" x="469" y="500" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="519" y="468"></rect><text style="font-size:12px;font-family:'monospace'" x="572" y="500" dominant-baseline="middle" text-anchor="middle" >SHIFT</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="632" y="468"></rect><text style="font-size:12px;font-family:'monospace'" x="685" y="500" dominant-baseline="middle" text-anchor="middle" >🖟 clk-left </text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="735" y="468"></rect><text style="font-size:12px;font-family:'monospace'" x="788" y="500" dominant-baseline="middle" text-anchor="middle" >to-def</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="838" y="468"></rect><text style="font-size:12px;font-family:'monospace'" x="891" y="500" dominant-baseline="middle" text-anchor="middle" ></text>
+<text style="font-size:24px;font-family:'monospace'" x="9" y="504" dominant-baseline="middle" text-anchor="start" >Layer: mice</text>
+
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="4" y="4"></rect><text style="font-size:12px;font-family:'monospace'" x="57" y="36" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="107" y="4"></rect><text style="font-size:12px;font-family:'monospace'" x="160" y="36" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="210" y="4"></rect><text style="font-size:12px;font-family:'monospace'" x="263" y="36" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="313" y="4"></rect><text style="font-size:12px;font-family:'monospace'" x="366" y="36" dominant-baseline="middle" text-anchor="middle" >↑ win</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="416" y="4"></rect><text style="font-size:12px;font-family:'monospace'" x="469" y="36" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="519" y="4"></rect><text style="font-size:12px;font-family:'monospace'" x="572" y="36" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="632" y="4"></rect><text style="font-size:12px;font-family:'monospace'" x="685" y="36" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="735" y="4"></rect><text style="font-size:12px;font-family:'monospace'" x="788" y="36" dominant-baseline="middle" text-anchor="middle" >💻 7   </text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="838" y="4"></rect><text style="font-size:12px;font-family:'monospace'" x="891" y="36" dominant-baseline="middle" text-anchor="middle" >💻 8   </text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="941" y="4"></rect><text style="font-size:12px;font-family:'monospace'" x="994" y="36" dominant-baseline="middle" text-anchor="middle" >💻 9   </text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="1044" y="4"></rect><text style="font-size:12px;font-family:'monospace'" x="1097" y="36" dominant-baseline="middle" text-anchor="middle" >📂 project  </text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="1147" y="4"></rect><text style="font-size:12px;font-family:'monospace'" x="1200" y="36" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="4" y="67"></rect><text style="font-size:12px;font-family:'monospace'" x="57" y="99" dominant-baseline="middle" text-anchor="middle" >⇄ win</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="107" y="67"></rect><text style="font-size:12px;font-family:'monospace'" x="160" y="99" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="210" y="67"></rect><text style="font-size:12px;font-family:'monospace'" x="263" y="99" dominant-baseline="middle" text-anchor="middle" >← win</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="313" y="67"></rect><text style="font-size:12px;font-family:'monospace'" x="366" y="99" dominant-baseline="middle" text-anchor="middle" >↓ win</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="416" y="67"></rect><text style="font-size:12px;font-family:'monospace'" x="469" y="99" dominant-baseline="middle" text-anchor="middle" >→ win</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="519" y="67"></rect><text style="font-size:12px;font-family:'monospace'" x="572" y="99" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="632" y="67"></rect><text style="font-size:12px;font-family:'monospace'" x="685" y="99" dominant-baseline="middle" text-anchor="middle" >🚀 terminal</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="735" y="67"></rect><text style="font-size:12px;font-family:'monospace'" x="788" y="99" dominant-baseline="middle" text-anchor="middle" >💻 code</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="838" y="67"></rect><text style="font-size:12px;font-family:'monospace'" x="891" y="99" dominant-baseline="middle" text-anchor="middle" >💻 mail</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="941" y="67"></rect><text style="font-size:12px;font-family:'monospace'" x="994" y="99" dominant-baseline="middle" text-anchor="middle" >💻 web </text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="1044" y="67"></rect><text style="font-size:12px;font-family:'monospace'" x="1097" y="99" dominant-baseline="middle" text-anchor="middle" >📂 proj-file</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="1147" y="67"></rect><text style="font-size:12px;font-family:'monospace'" x="1200" y="99" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="4" y="130"></rect><text style="font-size:12px;font-family:'monospace'" x="57" y="162" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="107" y="130"></rect><text style="font-size:12px;font-family:'monospace'" x="160" y="162" dominant-baseline="middle" text-anchor="middle" >⌧ win       </text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="210" y="130"></rect><text style="font-size:12px;font-family:'monospace'" x="263" y="162" dominant-baseline="middle" text-anchor="middle" >⌧ other-win </text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="313" y="130"></rect><text style="font-size:12px;font-family:'monospace'" x="366" y="162" dominant-baseline="middle" text-anchor="middle" >✂ horiz</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="416" y="130"></rect><text style="font-size:12px;font-family:'monospace'" x="469" y="162" dominant-baseline="middle" text-anchor="middle" >✂ vert </text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="519" y="130"></rect><text style="font-size:12px;font-family:'monospace'" x="572" y="162" dominant-baseline="middle" text-anchor="middle" >⇄ buffer</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="632" y="130"></rect><text style="font-size:12px;font-family:'monospace'" x="685" y="162" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="735" y="130"></rect><text style="font-size:12px;font-family:'monospace'" x="788" y="162" dominant-baseline="middle" text-anchor="middle" >💻 1   </text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="838" y="130"></rect><text style="font-size:12px;font-family:'monospace'" x="891" y="162" dominant-baseline="middle" text-anchor="middle" >💻 2   </text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="941" y="130"></rect><text style="font-size:12px;font-family:'monospace'" x="994" y="162" dominant-baseline="middle" text-anchor="middle" >💻 3   </text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="1044" y="130"></rect><text style="font-size:12px;font-family:'monospace'" x="1097" y="162" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="1147" y="130"></rect><text style="font-size:12px;font-family:'monospace'" x="1200" y="162" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="313" y="193"></rect><text style="font-size:12px;font-family:'monospace'" x="366" y="225" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="416" y="193"></rect><text style="font-size:12px;font-family:'monospace'" x="469" y="225" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="519" y="193"></rect><text style="font-size:12px;font-family:'monospace'" x="572" y="225" dominant-baseline="middle" text-anchor="middle" ></text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="632" y="193"></rect><text style="font-size:12px;font-family:'monospace'" x="685" y="225" dominant-baseline="middle" text-anchor="middle" >set-mark</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="735" y="193"></rect><text style="font-size:12px;font-family:'monospace'" x="788" y="225" dominant-baseline="middle" text-anchor="middle" >to-def</text>
+<rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="838" y="193"></rect><text style="font-size:12px;font-family:'monospace'" x="891" y="225" dominant-baseline="middle" text-anchor="middle" ></text>
+<text style="font-size:24px;font-family:'monospace'" x="9" y="229" dominant-baseline="middle" text-anchor="start" >Layer: wm</text>
 
 </svg>

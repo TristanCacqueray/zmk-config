@@ -10,15 +10,6 @@
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/mouse.h>
 
-#define CONFIG_WIRELESS 1
-
-#if CONFIG_WIRELESS
-    #include <dt-bindings/zmk/bt.h>
-    #define _BT_SEL_KEYS_ &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_CLR
-#else
-    #define _BT_SEL_KEYS_ &trans &trans &trans &trans &trans
-#endif
-
 // Force Linux unicode sequence
 #define OS_UNICODE_LEAD &macro_tap &kp LS(LC(U))
 #define OS_UNICODE_TRAIL &macro_tap &kp SPACE
@@ -56,11 +47,11 @@ MAKE_HRM(hhr, "hold-preferred", &mo, &kp, KEYS_L THUMBS, )   // right-hand Home 
 #define DEFAULT 0
 #define FUN     1
 #define NAV     2
-#define CTRL    3
-#define UNICODE 4
-#define GREEK   5
-#define WM      6
-#define MICE    7
+#define UNICODE 3
+#define GREEK   4
+#define WM      5
+#define MICE    6
+#define SYSTEM  7
 
 // hold: momentary layer, shift+tap: toggle layer
 ZMK_BEHAVIOR(fun_tog, mod_morph,
@@ -138,18 +129,6 @@ ZMK_LAYER(nav,
   time-to-max-speed-ms = <500>;
   delay-ms = <0>;
 };
-
-ZMK_LAYER(ctrl,
-// ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮   ╭─────────────┬─────────────┬─────────────┬─────────────┬─────────────┬─────────────╮
-     &to DEFAULT   &out OUT_TOG  &none         &none         &none         &none             &none         &none         &none         &none         &none         &none
-// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &to DEFAULT   &none         &none         &none         &none         &none             &none         &none         &none         &none         &none         &none
-// ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-     &none                                    _BT_SEL_KEYS_                                  &none         &none         &none         &none         &none         &none
-// ╰─────────────┴─────────────┴─────────────┼─────────────┼─────────────┼─────────────┤   ├─────────────┼─────────────┼─────────────┼─────────────┴─────────────┴─────────────╯
-                                               &none         &none         &none             &none         &to DEFAULT   &none
-//                                           ╰─────────────┴─────────────┴─────────────╯   ╰─────────────┴─────────────┴─────────────╯
-)
 
 #define I_CIRC &fr_i_circumflex
 #define E_CIRC &fr_e_circumflex
