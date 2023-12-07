@@ -185,7 +185,19 @@ renderTemplate (name, layout) = include <> unlines [mods, mk_layout]
     include
         | "&bt " `isInfixOf` bindings = "#include <dt-bindings/zmk/bt.h>\n"
         | otherwise = ""
-    mk_layout = unlines ["/ {", "  keymap {", "    compatible = \"zmk,keymap\";", "    layer_" <> name <> " {", "      bindings = <", bindings <> "      >;", "    };", "  };", "};"]
+    mk_layout =
+        unlines
+            [ "/ {"
+            , "  keymap {"
+            , "    compatible = \"zmk,keymap\";"
+            , "    layer_" <> name <> " {"
+            , "      label = \"" <> name <> "\";"
+            , "      bindings = <"
+            , bindings <> "      >;"
+            , "    };"
+            , "  };"
+            , "};"
+            ]
     bindings = unlines $ map (mappend "        ") $ map renderRow layout
     renderRow row = "  " <> intercalate " " (map renderLayoutKey row)
     renderLayoutKey k
@@ -305,7 +317,7 @@ miceLayout =
       where
         binding = "&mmv MOVE_" <> axe <> "(" <> sign <> "1250)"
         axe | dir `elem` [DUp, DDown] = "VERT" | otherwise = "HOR"
-        sign | dir `elem` [DLeft, DDown] = "-" | otherwise = ""
+        sign | dir `elem` [DLeft, DUp] = "-" | otherwise = ""
     i = K (mice DUp) X X
     j = K (mice DLeft) X X
     k = K (mice DDown) X X
@@ -334,17 +346,18 @@ miceLayout =
 systemLayout :: Layout
 systemLayout =
     [ [trm, q, N, N, N, N, N, N, N, N, N, N]
-    , [trm, N, N, N, N, N, N, N, N, N, N, N]
-    , [N, N, N, N, N, r, a, b, c, d, N, N]
+    , [trm, N, N, N, N, N, N, d, e, N, N, N]
+    , [NNN, N, N, N, N, r, N, a, b, c, N, N]
     , [N, N, N, N, trm, N]
     ]
   where
     r = K (A NA "bt-clear" "&bt BT_CLR") X X
     q = K (A NA "out-toggle" "&out OUT_TOG") X X
-    a = K (A NA "bt-0" "&bt BT_SEL 0") X X
-    b = K (A NA "bt-1" "&bt BT_SEL 1") X X
-    c = K (A NA "bt-2" "&bt BT_SEL 2") X X
-    d = K (A NA "bt-3" "&bt BT_SEL 3") X X
+    a = K (A NA "bt-1" "&bt BT_SEL 0") X X
+    b = K (A NA "bt-2" "&bt BT_SEL 1") X X
+    c = K (A NA "bt-3" "&bt BT_SEL 2") X X
+    d = K (A NA "bt-4" "&bt BT_SEL 3") X X
+    e = K (A NA "bt-5" "&bt BT_SEL 4") X X
 
 frenchLayout :: Layout
 frenchLayout =
@@ -436,10 +449,11 @@ pattern L name c = K (Action NA name (UnicodeShift c)) X X
 main :: IO ()
 main = do
     when True do
-        putStrLn doc
+        -- putStrLn doc
         writeFile "layers.svg" doc
-        putStrLn gen
+        -- putStrLn gen
         writeFile "./config/codegen.dtsi" gen
+        putStrLn "updated!"
   where
     layouts =
         ("wm", wmLayout)

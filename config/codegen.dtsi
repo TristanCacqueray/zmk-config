@@ -62,6 +62,7 @@ ZMK_UNICODE_SINGLE(uem_greek_sum          , N2, N2, N9, N5) // ⊕
   keymap {
     compatible = "zmk,keymap";
     layer_wm {
+      label = "wm";
       bindings = <
           &none &none &none &kp LS(UP) &none &none &none &kp LG(J) &kp LG(K) &kp LG(L) &em_open_project &none
           &kp LG(TAB) &none &kp LS(LEFT) &kp LS(DOWN) &kp LS(RIGHT) &none &kp LG(RET) &kp LG(F) &kp LG(G) &kp LG(H) &em_open_proj_file &none
@@ -78,9 +79,10 @@ ZMK_UNICODE_SINGLE(uem_greek_sum          , N2, N2, N9, N5) // ⊕
   keymap {
     compatible = "zmk,keymap";
     layer_mice {
+      label = "mice";
       bindings = <
-          &to DEFAULT &none &kp LA(LEFT) &kp UP &kp LA(RIGHT) &none &none &mkp LCLK &mmv MOVE_VERT(1250) &mkp RCLK &none &none
-          &to SYSTEM &none &kp LEFT &kp DOWN &kp RIGHT &kp PG_UP &mwh SCROLL_VERT(10) &mmv MOVE_HOR(-1250) &mmv MOVE_VERT(-1250) &mmv MOVE_HOR(1250) &none &none
+          &to DEFAULT &none &kp LA(LEFT) &kp UP &kp LA(RIGHT) &none &none &mkp LCLK &mmv MOVE_VERT(-1250) &mkp RCLK &none &none
+          &to SYSTEM &none &kp LEFT &kp DOWN &kp RIGHT &kp PG_UP &mwh SCROLL_VERT(10) &mmv MOVE_HOR(-1250) &mmv MOVE_VERT(1250) &mmv MOVE_HOR(1250) &none &none
           &none &none &none &kp LCTRL &kp LALT &kp PG_DN &mwh SCROLL_VERT(-10) &mkp MCLK &none &none &none &kp RET
           &kp LMETA &none &kp LSHIFT &mkp LCLK &to DEFAULT &none
       >;
@@ -95,10 +97,11 @@ ZMK_UNICODE_SINGLE(uem_greek_sum          , N2, N2, N9, N5) // ⊕
   keymap {
     compatible = "zmk,keymap";
     layer_system {
+      label = "system";
       bindings = <
           &to DEFAULT &out OUT_TOG &none &none &none &none &none &none &none &none &none &none
-          &to DEFAULT &none &none &none &none &none &none &none &none &none &none &none
-          &none &none &none &none &none &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &none &none
+          &to DEFAULT &none &none &none &none &none &none &bt BT_SEL 3 &bt BT_SEL 4 &none &none &none
+          &none &none &none &none &none &bt BT_CLR &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &none &none
           &none &none &none &none &to DEFAULT &none
       >;
     };
@@ -111,6 +114,7 @@ ZMK_UNICODE_SINGLE(uem_greek_sum          , N2, N2, N9, N5) // ⊕
   keymap {
     compatible = "zmk,keymap";
     layer_french {
+      label = "french";
       bindings = <
           &none &none &uem_e_grave &uem_e_cute &uem_e_circ &none &none &uem_u_grave &uem_i_circ &uem_oe &kp LS(ESC) &none
           &none &uem_a_grave &uem_a_circ &uem_e_trema &none &uem_euro &none &uem_u_trema &uem_i_trema &uem_o_circ &none &none
@@ -127,6 +131,7 @@ ZMK_UNICODE_SINGLE(uem_greek_sum          , N2, N2, N9, N5) // ⊕
   keymap {
     compatible = "zmk,keymap";
     layer_greek {
+      label = "greek";
       bindings = <
           &none &uem_greek_omega &uem_greek_eta &uem_greek_epsilon &uem_greek_rho &uem_greek_tau &uem_greek_gamma &uem_greek_upsilon &uem_greek_iota &uem_greek_omikron &uem_greek_pi &none
           &none &uem_greek_alpha &uem_greek_sigma &uem_greek_delta &uem_greek_phi &uem_greek_theta &uem_greek_chi &uem_greek_prod &uem_greek_kappa &uem_greek_lambda &uem_greek_psi &none
