@@ -256,7 +256,7 @@ wmLayout :: Layout
 wmLayout =
     [ [NN, N, w, e, r, t, y, u, i, o, p, N]
     , [lm, a, s, d, f, g, h, j, k, l, ψ, N]
-    , [NN, z, x, c, v, b, n, m, μ, dot, λ, N]
+    , [NN, n, m, μ, dot, b, z, x, c, v, λ, N]
     , [tlf, tlm, tlp, trp, trm, trf]
     ]
   where
