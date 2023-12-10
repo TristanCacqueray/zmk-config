@@ -821,7 +821,9 @@
 <rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="519" y="675"></rect>
 
 <rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="632" y="675"></rect>
-
+<text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="680" y="708">
+ 🐧 RET
+</text>
 <rect style="fill:none;stroke:#c3c3c3" width="100" height="60" x="735" y="675"></rect>
 <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="783" y="708">
  🐧 F
