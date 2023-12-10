@@ -1,5 +1,3 @@
-# zmk-config
+![layers](https://raw.githubusercontent.com/TristanCacqueray/zmk-config/main/moonwalker.svg)
 
-![layout](./moonwalker.svg)
-
-![layers](https://raw.githubusercontent.com/TristanCacqueray/zmk-config/main/layers.svg)
+> Diagrams and config generated with [gen-zmk](https://github.com/TristanCacqueray/gen-zmk)
