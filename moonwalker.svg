@@ -1157,10 +1157,6 @@
 <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="308" y="78">
  @
 </text>
-<rect style="fill:#eee" width="18" height="18" x="199" y="132"></rect>
-<text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="205" y="141">
- [
-</text>
 <rect style="fill:#eee" width="18" height="18" x="302" y="132"></rect>
 <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="308" y="141">
  (
@@ -1168,6 +1164,10 @@
 <rect style="fill:#eee" width="18" height="18" x="405" y="132"></rect>
 <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="411" y="141">
  )
+</text>
+<rect style="fill:#eee" width="18" height="18" x="199" y="132"></rect>
+<text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="205" y="141">
+ [
 </text>
 <rect style="fill:#eee" width="18" height="18" x="508" y="132"></rect>
 <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="514" y="141">
