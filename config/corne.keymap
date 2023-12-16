@@ -45,7 +45,7 @@ MAKE_HRM(hhr, "hold-preferred", &mo, &kp, KEYS_L THUMBS, )   // right-hand Home 
 ZMK_BEHAVIOR(mt_repeat, hold_tap,         \
     flavor = "hold-preferred";            \
     tapping-term-ms = <400>;              \
-    quick-tap-ms = <QUICK_TAP_MS>;        \
+    quick-tap-ms = <500>;                 \
     bindings = <&kp>, <&kp>;              \
 )
 
