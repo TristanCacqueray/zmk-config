@@ -117,11 +117,11 @@ ZMK_BEHAVIOR(eme_3a3d, macro, bindings = <&kp COLON &kp EQUAL>; wait-ms = <0>; t
   &kp FSLH
   &kp RET
   &kp LGUI
-  &mo 1
+  &kp LALT
   &mt_repeat LSHIFT BSPC
   &kp SPACE
   &mo 2
-  &none
+  &mo 1
       >;
     };
   };
