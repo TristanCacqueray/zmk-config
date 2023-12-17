@@ -346,7 +346,7 @@ ZMK_BEHAVIOR(eme_3a3d, macro, bindings = <&kp COLON &kp EQUAL>; wait-ms = <0>; t
   &kp LS(UP)
   &none
   &none
-  &none
+  &kp LG(V)
   &kp LG(J)
   &kp LG(K)
   &kp LG(L)

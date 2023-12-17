@@ -658,8 +658,12 @@
     
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="519" y="612"></rect>
     
-<rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="632" y="612"></rect>
-    
+<rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="632" y="612">
+ <title>(gui v)</title>
+</rect>
+    <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="682" y="642">
+ 🚀 gmrun
+</text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="735" y="612">
  <title>(gui J)</title>
 </rect>
