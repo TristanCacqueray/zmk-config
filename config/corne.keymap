@@ -23,7 +23,7 @@
 #define KEYS_R   RT0 RT1 RT2 RT3 RT4 RT5 RM0 RM1 RM2 RM3 RM4 RM5 RB0 RB1 RB2 RB3 RB4 RB5 // right hand
 #define THUMBS   LH0 LH1 LH2 RH0 RH1 RH2                                                 // thumbs
 
-#define QUICK_TAP_MS 200
+#define QUICK_TAP_MS 240
 
 // Home row mods
 #define MAKE_HRM(NAME, FLAVOR, HOLD, TAP, TRIGGER_POS, HOOK) \
@@ -44,7 +44,7 @@ MAKE_HRM(hhr, "hold-preferred", &mo, &kp, KEYS_L THUMBS, )   // right-hand Home 
 
 ZMK_BEHAVIOR(mt_repeat, hold_tap,         \
     flavor = "hold-preferred";            \
-    tapping-term-ms = <400>;              \
+    tapping-term-ms = <QUICK_TAP_MS>;     \
     quick-tap-ms = <500>;                 \
     bindings = <&kp>, <&kp>;              \
 )
