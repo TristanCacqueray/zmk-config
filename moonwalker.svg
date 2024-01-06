@@ -198,11 +198,11 @@
     
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="107" y="330"></rect>
     <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="155" y="363">
- !
+ F20
 </text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="210" y="330"></rect>
     <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="258" y="363">
- @
+ F21
 </text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="313" y="330"></rect>
     <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="361" y="363">
@@ -210,15 +210,15 @@
 </text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="416" y="330"></rect>
     <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="464" y="363">
- [
+ F22
 </text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="519" y="330"></rect>
     <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="567" y="363">
- ]
+ F23
 </text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="632" y="330"></rect>
     <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="680" y="363">
- "
+ 🖟 MIDDLE
 </text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="735" y="330"></rect>
     <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="783" y="363">
@@ -242,7 +242,7 @@
     
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="107" y="393"></rect>
     <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="155" y="426">
- #
+ F18
 </text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="210" y="393"></rect>
     <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="258" y="426">
@@ -258,7 +258,7 @@
 </text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="519" y="393"></rect>
     <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="567" y="426">
- $
+ F19
 </text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="632" y="393"></rect>
     <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="680" y="426">
@@ -286,23 +286,23 @@
     
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="107" y="456"></rect>
     <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="155" y="489">
- [
+ F13
 </text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="210" y="456"></rect>
     <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="258" y="489">
- ]
+ F14
 </text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="313" y="456"></rect>
     <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="361" y="489">
- (
+ F15
 </text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="416" y="456"></rect>
     <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="464" y="489">
- )
+ F16
 </text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="519" y="456"></rect>
     <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="567" y="489">
- &amp;
+ F17
 </text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="632" y="456"></rect>
     <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="680" y="489">
@@ -329,11 +329,17 @@
  RET
 </text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="313" y="519"></rect>
-    
+    <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="361" y="552">
+ 👉 BASE
+</text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="416" y="519"></rect>
-    
+    <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="464" y="552">
+ 👉 BASE
+</text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="519" y="519"></rect>
-    
+    <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="567" y="552">
+ 👉 BASE
+</text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="632" y="519"></rect>
     
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="735" y="519"></rect>
@@ -440,11 +446,15 @@
  F12
 </text>
     
-    
+    <text style="font-size:12px;font-family:'monospace';fill:#85521c" dominant-baseline="central" text-anchor="end" x="410" y="539">
+ 👉 BASE
+</text>
     <text style="font-size:12px;font-family:'monospace';fill:#85521c" dominant-baseline="central" text-anchor="end" x="513" y="539">
  👉 BASE
 </text>
-    
+    <text style="font-size:12px;font-family:'monospace';fill:#85521c" dominant-baseline="central" text-anchor="end" x="616" y="539">
+ 👉 BASE
+</text>
     
     <text style="font-size:12px;font-family:'monospace';fill:#85521c" dominant-baseline="central" text-anchor="end" x="832" y="539">
  👉 BASE

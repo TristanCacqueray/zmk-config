@@ -133,23 +133,23 @@ ZMK_BEHAVIOR(eme_3a3d, macro, bindings = <&kp COLON &kp EQUAL>; wait-ms = <0>; t
       label = "num";
       bindings = <
   &none
-  &kp EXCL
-  &kp AT
+  &kp F20
+  &kp F21
   &kp UP
-  &kp LBKT
-  &kp RBKT
-  &kp DQT
+  &kp F22
+  &kp F23
+  &mkp MCLK
   &kp N7
   &kp N8
   &kp N9
   &kp STAR
   &none
   &none
-  &kp HASH
+  &kp F18
   &kp LEFT
   &kp DOWN
   &kp RIGHT
-  &kp DLLR
+  &kp F19
   &kp PG_UP
   &kp N4
   &kp N5
@@ -157,20 +157,20 @@ ZMK_BEHAVIOR(eme_3a3d, macro, bindings = <&kp COLON &kp EQUAL>; wait-ms = <0>; t
   &eme_3a3d
   &none
   &none
-  &kp LBKT
-  &kp RBKT
-  &kp LPAR
-  &kp RPAR
-  &kp AMPS
+  &kp F13
+  &kp F14
+  &kp F15
+  &kp F16
+  &kp F17
   &kp PG_DN
   &kp N1
   &kp N2
   &kp N3
   &kp BSLH
   &kp RET
-  &none
-  &none
-  &none
+  &to 0
+  &to 0
+  &to 0
   &none
   &kp N0
   &kp DOT
@@ -220,9 +220,9 @@ ZMK_BEHAVIOR(eme_3a3d, macro, bindings = <&kp COLON &kp EQUAL>; wait-ms = <0>; t
   &kp F3
   &kp F12
   &none
-  &none
   &to 0
-  &none
+  &to 0
+  &to 0
   &none
   &to 0
   &kp PSCRN
