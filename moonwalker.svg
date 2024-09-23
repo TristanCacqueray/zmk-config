@@ -662,7 +662,7 @@
     
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="313" y="612"></rect>
     <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="361" y="645">
- ⇧ UP
+ C-UP
 </text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="416" y="612"></rect>
     
@@ -710,15 +710,15 @@
     
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="210" y="675"></rect>
     <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="258" y="708">
- ⇧ LEFT
+ C-LEFT
 </text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="313" y="675"></rect>
     <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="361" y="708">
- ⇧ DOWN
+ C-DOWN
 </text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="416" y="675"></rect>
     <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="464" y="708">
- ⇧ RIGHT
+ C-RIGHT
 </text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="519" y="675"></rect>
     
