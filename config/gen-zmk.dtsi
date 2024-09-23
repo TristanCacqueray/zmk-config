@@ -400,7 +400,7 @@ ZMK_BEHAVIOR(eme_3a3d, macro, bindings = <&kp COLON &kp EQUAL>; wait-ms = <0>; t
   &none
   &none
   &mkp LCLK
-  &mmv MOVE_VERT(-1250)
+  &mmv MOVE_Y(-1250)
   &mkp RCLK
   &none
   &none
@@ -410,10 +410,10 @@ ZMK_BEHAVIOR(eme_3a3d, macro, bindings = <&kp COLON &kp EQUAL>; wait-ms = <0>; t
   &kp DOWN
   &kp RIGHT
   &kp PG_UP
-  &mwh SCROLL_VERT(10)
-  &mmv MOVE_HOR(-1250)
-  &mmv MOVE_VERT(1250)
-  &mmv MOVE_HOR(1250)
+  &msc MOVE_Y(10)
+  &mmv MOVE_X(-1250)
+  &mmv MOVE_Y(1250)
+  &mmv MOVE_X(1250)
   &none
   &none
   &to 8
@@ -422,7 +422,7 @@ ZMK_BEHAVIOR(eme_3a3d, macro, bindings = <&kp COLON &kp EQUAL>; wait-ms = <0>; t
   &kp LCTRL
   &kp LALT
   &kp PG_DN
-  &mwh SCROLL_VERT(-10)
+  &msc MOVE_Y(-10)
   &mkp MCLK
   &none
   &none
