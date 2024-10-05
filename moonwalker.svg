@@ -658,16 +658,28 @@
     
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="107" y="612"></rect>
     
-<rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="210" y="612"></rect>
-    
+<rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="210" y="612">
+ <title>C-x t O</title>
+</rect>
+    <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="260" y="642">
+ ← tab
+</text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="313" y="612"></rect>
     <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="361" y="645">
  C-UP
 </text>
-<rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="416" y="612"></rect>
-    
-<rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="519" y="612"></rect>
-    
+<rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="416" y="612">
+ <title>C-x t o</title>
+</rect>
+    <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="466" y="642">
+ → tab
+</text>
+<rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="519" y="612">
+ <title>C-x t 2</title>
+</rect>
+    <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="569" y="642">
+ new tab
+</text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="632" y="612">
  <title>(gui v)</title>
 </rect>
@@ -720,8 +732,12 @@
     <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="464" y="708">
  C-RIGHT
 </text>
-<rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="519" y="675"></rect>
-    
+<rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="519" y="675">
+ <title>C-x t RET</title>
+</rect>
+    <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="569" y="705">
+ ⇄ tab
+</text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="632" y="675">
  <title>(gui ret)</title>
 </rect>
@@ -812,17 +828,23 @@
     
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="313" y="801"></rect>
     
-<rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="416" y="801"></rect>
-    
+<rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="416" y="801">
+ <title>C-x t 0</title>
+</rect>
+    <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="466" y="831">
+ ⌧ tab
+</text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="519" y="801"></rect>
     
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="632" y="801"></rect>
     <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="680" y="834">
  C-SPC
 </text>
-<rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="735" y="801"></rect>
-    <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="783" y="834">
- 👉 BASE
+<rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="735" y="801">
+ <title>C-x 0</title>
+</rect>
+    <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="785" y="831">
+ ⌧ win
 </text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="838" y="801"></rect>
     <text style="font-size:24px;font-family:'monospace';fill:#6b2228" dominant-baseline="central" text-anchor="middle" x="150" y="1118">

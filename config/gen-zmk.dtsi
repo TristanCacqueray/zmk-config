@@ -22,13 +22,18 @@
 / { combos { compatible = "zmk,combos"; combo_emk_5c { timeout-ms = <18>; bindings = <&kp BSLH>; key-positions = <20 32>; layers = <0 1 8>; }; }; };
 / { combos { compatible = "zmk,combos"; combo_emk_27 { timeout-ms = <18>; bindings = <&kp SQT>; key-positions = <8 20>; layers = <0 1 8>; }; }; };
 / { combos { compatible = "zmk,combos"; combo_emk_22 { timeout-ms = <18>; bindings = <&kp DQT>; key-positions = <7 19>; layers = <0 1 8>; }; }; };
+ZMK_BEHAVIOR(eme_432d782074204f, macro, bindings = <&kp LC(X) &kp T &kp LS(O)>; wait-ms = <0>; tap-ms = <5>;)
+ZMK_BEHAVIOR(eme_432d782074206f, macro, bindings = <&kp LC(X) &kp T &kp O>; wait-ms = <0>; tap-ms = <5>;)
+ZMK_BEHAVIOR(eme_432d7820742032, macro, bindings = <&kp LC(X) &kp T &kp N2>; wait-ms = <0>; tap-ms = <5>;)
 ZMK_BEHAVIOR(eme_432d6320702070, macro, bindings = <&kp LC(C) &kp P &kp P>; wait-ms = <0>; tap-ms = <5>;)
+ZMK_BEHAVIOR(eme_432d78207420524554, macro, bindings = <&kp LC(X) &kp T &kp RET>; wait-ms = <0>; tap-ms = <5>;)
 ZMK_BEHAVIOR(eme_432d6320702066, macro, bindings = <&kp LC(C) &kp P &kp F>; wait-ms = <0>; tap-ms = <5>;)
 ZMK_BEHAVIOR(eme_432d782062, macro, bindings = <&kp LC(X) &kp B>; wait-ms = <0>; tap-ms = <5>;)
 ZMK_BEHAVIOR(eme_432d782030, macro, bindings = <&kp LC(X) &kp N0>; wait-ms = <0>; tap-ms = <5>;)
 ZMK_BEHAVIOR(eme_432d782031, macro, bindings = <&kp LC(X) &kp N1>; wait-ms = <0>; tap-ms = <5>;)
 ZMK_BEHAVIOR(eme_432d782032, macro, bindings = <&kp LC(X) &kp N2>; wait-ms = <0>; tap-ms = <5>;)
 ZMK_BEHAVIOR(eme_432d782033, macro, bindings = <&kp LC(X) &kp N3>; wait-ms = <0>; tap-ms = <5>;)
+ZMK_BEHAVIOR(eme_432d7820742030, macro, bindings = <&kp LC(X) &kp T &kp N0>; wait-ms = <0>; tap-ms = <5>;)
 ZMK_UNICODE_PAIR(emu_3c93a9, N0, N3,  C, N9, N0, N3,  A, N9) // ω/Ω
 ZMK_UNICODE_PAIR(emu_3b7397, N0, N3,  B, N7, N0, N3, N9, N7) // η/Η
 ZMK_UNICODE_PAIR(emu_3f5395, N0, N3,  F, N5, N0, N3, N9, N5) // ϵ/Ε
@@ -342,10 +347,10 @@ ZMK_BEHAVIOR(eme_3a3d, macro, bindings = <&kp COLON &kp EQUAL>; wait-ms = <0>; t
       bindings = <
   &none
   &none
-  &none
+  &eme_432d782074204f
   &kp LC(UP)
-  &none
-  &none
+  &eme_432d782074206f
+  &eme_432d7820742032
   &kp LG(V)
   &kp LG(J)
   &kp LG(K)
@@ -357,7 +362,7 @@ ZMK_BEHAVIOR(eme_3a3d, macro, bindings = <&kp COLON &kp EQUAL>; wait-ms = <0>; t
   &kp LC(LEFT)
   &kp LC(DOWN)
   &kp LC(RIGHT)
-  &none
+  &eme_432d78207420524554
   &kp LG(RET)
   &kp LG(F)
   &kp LG(G)
@@ -377,10 +382,10 @@ ZMK_BEHAVIOR(eme_3a3d, macro, bindings = <&kp COLON &kp EQUAL>; wait-ms = <0>; t
   &none
   &none
   &none
-  &none
+  &eme_432d7820742030
   &none
   &kp LC(SPACE)
-  &to 0
+  &eme_432d782030
   &none
       >;
     };
