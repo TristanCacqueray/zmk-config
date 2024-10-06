@@ -799,10 +799,10 @@
  ⇄ buffer
 </text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="632" y="738">
- <title>C-x 0</title>
+ <title>C-c &lt;left&gt;</title>
 </rect>
     <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="682" y="768">
- ⌧ win
+ win-undo
 </text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="735" y="738">
  <title>C-x 1</title>
@@ -822,8 +822,12 @@
     <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="991" y="768">
  ✂ vert
 </text>
-<rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="1044" y="738"></rect>
-    
+<rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="1044" y="738">
+ <title>C-c &lt;right&gt;</title>
+</rect>
+    <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="1094" y="768">
+ win-redo
+</text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="1147" y="738"></rect>
     
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="313" y="801"></rect>

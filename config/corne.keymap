@@ -61,7 +61,7 @@ ZMK_BEHAVIOR(mt_repeat, hold_tap,         \
 
 &msc {
   acceleration-exponent = <1>;
-  time-to-max-speed-ms = <500>;
+  time-to-max-speed-ms = <40>;
   delay-ms = <0>;
 };
 
