@@ -705,7 +705,7 @@
  💻 9
 </text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="1044" y="612">
- <title>C-c p p</title>
+ <title>C-x p p</title>
 </rect>
     <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="1094" y="642">
  📂 project
@@ -763,7 +763,7 @@
  💻 web
 </text>
 <rect style="fill:#f8f8f8;stroke:#c3c3c3" width="100" height="60" x="1044" y="675">
- <title>C-c p f</title>
+ <title>C-x p f</title>
 </rect>
     <text style="font-size:12px;font-family:'monospace'" dominant-baseline="central" text-anchor="middle" x="1094" y="705">
  📂 proj-file
