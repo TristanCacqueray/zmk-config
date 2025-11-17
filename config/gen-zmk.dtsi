@@ -63,7 +63,7 @@ ZMK_UNICODE_PAIR(emu_3bd39d, N0, N3,  B,  D, N0, N3, N9,  D) // ν/Ν
 ZMK_UNICODE_PAIR(emu_3bc39c, N0, N3,  B,  C, N0, N3, N9,  C) // μ/Μ
 ZMK_UNICODE_SINGLE(emu_211d, N2, N1, N1,  D) // ℝ
 ZMK_UNICODE_SINGLE(emu_2295, N2, N2, N9, N5) // ⊕
-ZMK_UNICODE_PAIR(emu_e8c9, N0, N0,  E, N8, N0, N0,  C, N9) // è/É
+ZMK_UNICODE_PAIR(emu_e8c8, N0, N0,  E, N8, N0, N0,  C, N8) // è/È
 ZMK_UNICODE_PAIR(emu_e9c9, N0, N0,  E, N9, N0, N0,  C, N9) // é/É
 ZMK_UNICODE_PAIR(emu_eaca, N0, N0,  E,  A, N0, N0,  C,  A) // ê/Ê
 ZMK_UNICODE_PAIR(emu_f9d9, N0, N0,  F, N9, N0, N0,  D, N9) // ù/Ù
@@ -245,7 +245,7 @@ ZMK_BEHAVIOR(eme_3a3d, macro, bindings = <&kp COLON &kp EQUAL>; wait-ms = <0>; t
       bindings = <
   &none
   &none
-  &emu_e8c9
+  &emu_e8c8
   &emu_e9c9
   &emu_eaca
   &none
